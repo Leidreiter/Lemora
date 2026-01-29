@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiggles</title>
+    <title>Lemora - Soluciones rápidas para emprendedores</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -15,13 +16,32 @@
 
 <body>
 
+
     <header class="header">
+
+        <div class="redes">
+            <div class="container-redes">
+                <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
         <div class="header-inner container-header">
-
-            <img src="img/logo.svg" alt="logo Wiggles" class="logo">
-
+            <img src="img/logo.svg" alt="logo Lemora" class="logo">
 
             <nav class="nav" id="nav">
+                <!-- Botón cerrar -->
+                <button class="close-menu" id="close-menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
                 <ul class="nav-list">
                     <li><a href="#">Problemas</a></li>
                     <li><a href="#">Solucion</a></li>
@@ -63,7 +83,7 @@
 
                 <p>
                     Tener tu propio tienda online, debería ser una solución a tus problemas,
-                    no generarte nuevos, por eso llegó Wiggles a la Argentina.
+                    no generarte nuevos, por eso llegó Lemora a la Argentina.
                 </p>
 
                 <div class="hero-actions">
@@ -112,10 +132,10 @@
                     <div class="problema-content">
                         <h3>Marketplaces que no te cuidan</h3>
                         <p>
-                        Reclamos injustos, devoluciones falsas
-                        y pérdidas de producto y dinero. Eso es lo que se enfrentan miles de usuarios
-                        vendiendo sus productos cada día en plataformas que JAMÁS te ayudan en nada,
-                        eso termina hoy con Wiggles.
+                            Reclamos injustos, devoluciones falsas
+                            y pérdidas de producto y dinero. Eso es lo que se enfrentan miles de usuarios
+                            vendiendo sus productos cada día en plataformas que JAMÁS te ayudan en nada,
+                            eso termina hoy con Lemora.
                         </p>
                         <a href="#">Conocé más</a>
                     </div>
@@ -127,8 +147,8 @@
                 <article class="problema-card active">
                     <div class="problema-content">
                         <h3>Un mercado lleno de confusión</h3>
-                        <p>Diseñadores, programadores o agencias de marketing entre tantas opciones. 
-                            ¿Cómo saber quién es el adecuado para crear tu tienda online? 
+                        <p>Diseñadores, programadores o agencias de marketing entre tantas opciones.
+                            ¿Cómo saber quién es el adecuado para crear tu tienda online?
                             ¿Quién es el realmente capacitado y te dará soporte cuando lo necesites?
                             ¿Cómo sabés si lo que te están cobrando realmente es por una tienda online…
                             o solo por algo que después no vas a poder usar ni mantener o usar?
@@ -144,7 +164,7 @@
                     <div class="problema-content">
                         <h3>Precios y costos sin sentido</h3>
                         <p>
-                            ¿Por qué los costos varían tanto entre ellos si todos ofrecen el mismo servicio? 
+                            ¿Por qué los costos varían tanto entre ellos si todos ofrecen el mismo servicio?
                             Entre diseñadores, programadores y agencias no hay un valor fijo para sus servicios,
                             Los marketplace te cobran comisiones por ventas absurdos además de mentenimiento,
                             los costos para una tienda online son muy altos en nuestro país.
@@ -168,7 +188,7 @@
 
             <!-- Fila superior -->
             <div class="soluciones-top">
-                
+
                 <!-- Stack visual -->
                 <div class="store-stack">
                     <div class="stack-item stack-front">
@@ -187,7 +207,7 @@
                     <span class="badge">Venta directa</span>
                     <h3>Olvidate de plataformas e intermediarios</h3>
                     <p>
-                        Venta directa a través de WhatsApp. Cobralos como tú quieras con el método de pago 
+                        Venta directa a través de WhatsApp. Cobralos como tú quieras con el método de pago
                         que tu trabajes, basta de estar atado a condiciones de otros.
                         El cliente hace el pedido,
                         recibe el total y paga por transferencia, fin.
@@ -210,8 +230,10 @@
                             <div class="flex">
                                 <p>
                                     Cargá tus productos en una plantilla y tu tienda estará publicada en 24/48 horas.
-                                    No necesitas aprender a usar ningún sistema complejo, ni manejar ninguna plataforma o tecnología,
-                                    te mostramos en menos de 5 minutos como cargar tus productos y el resto lo hacemos nosotros.
+                                    No necesitas aprender a usar ningún sistema complejo, ni manejar ninguna plataforma
+                                    o tecnología,
+                                    te mostramos en menos de 5 minutos como cargar tus productos y el resto lo hacemos
+                                    nosotros.
                                 </p>
                                 <a href="#" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
@@ -227,8 +249,10 @@
                         <h3>Más barato que un streaming</h3>
                         <div class="flex">
                             <p>
-                                Ésto es real, compara los precios, por lo menos que pagás tu plataforma de streaming fovorita
-                                podes empezar a vender online a todo el mundo. No te ofrecemos la serie o película del momento,
+                                Ésto es real, compara los precios, por lo menos que pagás tu plataforma de streaming
+                                fovorita
+                                podes empezar a vender online a todo el mundo. No te ofrecemos la serie o película del
+                                momento,
                                 te ofrecemos llevar tu negocio al siguiente nivel, con un canal de ventas profesional.
                             </p>
                             <a href="#" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
@@ -272,7 +296,7 @@
 
                     <button class="control-item active" data-index="0">
                         <span class="badge">Conectadas</span>
-                        <h3>Agrega tus redes sociales</h3>
+                        <h3>Conecta tus redes</h3>
                         <p>Tus redes siempre presentes e integradas en la cabecera de la web, para que tus usuarios
                             conozcan más sobre tu presencia online y botón de WhatsApp integrado para contacto directo.
                         </p>
@@ -289,8 +313,8 @@
                     <button class="control-item" data-index="2">
                         <span class="badge">Compras</span>
                         <h3>Carrito de compras</h3>
-                        <p>Carrito de compras integrado, olvidate de cálculos en tus pedidos, el sistema suma cantidad 
-                            de productos y el cálculo total a pagar. 
+                        <p>Carrito de compras integrado, olvidate de cálculos en tus pedidos, el sistema suma cantidad
+                            de productos y el cálculo total a pagar.
                         </p>
                     </button>
 
@@ -298,14 +322,15 @@
                         <span class="badge">Pedidos</span>
                         <h3>Pedido directo</h3>
                         <p>Recibe todos los datos del cliente directo a WhatsApp, es todo lo que necesitas.
-                        aguarda la transferencia y completa la venta, sin intermediarios ni esperas innecesarias.
+                            aguarda la transferencia y completa la venta, sin intermediarios ni esperas innecesarias.
                         </p>
                     </button>
 
                     <button class="control-item" data-index="4">
                         <span class="badge">Marketing</span>
                         <h3>Banners que venden</h3>
-                        <p>Descata tu sitio con ofertas, promociones o descuentos con nuestros banners diseñados para captar la
+                        <p>Descata tu sitio con ofertas, promociones o descuentos con nuestros banners diseñados para
+                            captar la
                             atención de tus visitas y convertirlos en clientes. Exclusivos para el paquete premium*
                         </p>
                     </button>
@@ -395,7 +420,7 @@
                         <span class="badge">Inicial</span>
                         <h3>Prueba gratis</h3>
                     </div>
-                    
+
 
                     <ul class="features">
                         <p>Plantilla ecommerce básica</p>
@@ -415,7 +440,7 @@
                         <span class="badge">Básico</span>
                         <h3>$20.000<span>/mes</span></h3>
                     </div>
-                    
+
                     <ul class="features">
                         <p>Plantilla ecommerce básica</li>
                         <p>Dominio .com incluido</li>
@@ -443,6 +468,7 @@
                         <p>Página de preguntas frecuentes</li>
                         <p>Página de contacto con formulario (WhatsApp)</li>
                         <p>Botón de WhatsApp</li>
+                        <p>Diseño Miniatura</li>
                         <p>Contratación mínima: 3 meses</li>
                     </ul>
 
@@ -463,6 +489,7 @@
                         <p>Página de preguntas frecuentes</li>
                         <p>Página de contacto con formulario (email corporativo)</li>
                         <p>Páginas adicionales: Sobre nosotros, Ubicación y Servicios</p>
+                        <p>Diseño miniatura y banners</li>
                         <p>Contratación mínima: 6 meses</li>
                     </ul>
 
@@ -479,13 +506,16 @@
             <!-- Header -->
             <div class="testimonios-header">
                 <div class="testimonios-title">
-                    <h2>Quién confía en Wiggles<br>
-                    <em>crece de verdad</em></h2>
+                    <h2>Quién confía en Lemora<br>
+                        <em>crece de verdad</em>
+                    </h2>
                 </div>
 
                 <div class="testimonios-nav">
-                    <button class="arrow prev" data-testimonial-prev><i class="fa-solid fa-arrow-left-long"></i></button>
-                    <button class="arrow next" data-testimonial-next><i class="fa-solid fa-arrow-right-long"></i></button>
+                    <button class="arrow prev" data-testimonial-prev><i
+                            class="fa-solid fa-arrow-left-long"></i></button>
+                    <button class="arrow next" data-testimonial-next><i
+                            class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
             </div>
 
@@ -520,7 +550,7 @@
                             <div class="testimonial-content">
                                 <i class="fa-solid fa-quote-left"></i>
                                 <p>
-                                    Wiggles nos permitió lanzar nuestra tienda rápidamente
+                                    Lemora nos permitió lanzar nuestra tienda rápidamente
                                     y empezar a vender sin complicaciones.
                                 </p>
                                 <strong>Horacio Ponce</strong>
@@ -583,7 +613,8 @@
 
             <p>
                 Por que somos la solución definitiva a todos los problemas de tener una tienda online en Argentina.
-                Sin complicaciones, sin vueltas, sin tecnicismos y lo que más te importa a vos, a <b>un precio justo!</b>
+                Sin complicaciones, sin vueltas, sin tecnicismos y lo que más te importa a vos, a <b>un precio
+                    justo!</b>
             </p>
 
             <a href="https://wa.me/543515957014" target="_blank" class="cta-button">
@@ -597,9 +628,9 @@
         <div class="footer-container">
             <div class="footer-left">
                 <p>
-                    © 2026, Todos los derechos reservados. Wiggles es una marca de 
+                    © 2026, Todos los derechos reservados. Lemora es una marca de
                     <a href="https://soymarcus.dev" target="_blank">
-                        <img src="img/devBy.svg" alt="Wiggles logo" class="footer-logo">
+                        <img src="img/devBy.svg" alt="Lemora logo" class="footer-logo">
                     </a>
                 </p>
             </div>

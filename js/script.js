@@ -1,9 +1,28 @@
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 
-hamburger.addEventListener("click", () => {
+// Toggle menú
+hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // Evita que se propague al document
     nav.classList.toggle("active");
 });
+
+// Cerrar al hacer clic fuera del menú
+document.addEventListener("click", (e) => {
+    if (nav.classList.contains("active") && 
+        !nav.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        nav.classList.remove("active");
+    }
+});
+
+// Cerrar con botón X
+const closeBtn = document.getElementById("close-menu");
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+}
 
 const slides = document.querySelectorAll(".hero-slide");
 const mediaSlides = document.querySelectorAll(".hero-media-slide");

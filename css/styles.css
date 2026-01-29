@@ -136,7 +136,7 @@ h2 em,
 /* Botones reutilizables */
 .btn-primary {
     background-color: var(--blanco);
-    color: var(--primary-hover);
+    color: var(--primary-dark);
     padding: 12px 20px;
     border-radius: 999px;
     text-decoration: none;
@@ -163,7 +163,7 @@ h2 em,
 
 .btn-secondary:hover {
     background-color: var(--blanco);
-    color: var(--primary-hover);
+    color: var(--primary-dark);
 }
 
 .btn-outline {
@@ -214,6 +214,31 @@ h2 em,
 }
 
 /* ===== HEADER ===== */
+.redes{
+    background-color: white;
+    border-bottom: 4px solid var(--primary-hover);
+    height: 40px;
+}
+.container-redes{
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+@media (max-width: 768px) {
+    .container-redes{
+        justify-content: center;
+    }
+}
+.container-redes a{
+    color: var(--primary-dark);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
 .header {
     position: fixed;
     top: 0;
@@ -221,7 +246,6 @@ h2 em,
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(8px);
     z-index: 1000000;
-    border-top: 20px solid var(--primary-color);
 }
 
 .header-inner {
@@ -232,8 +256,7 @@ h2 em,
 }
 
 .logo {
-    width: 100%;
-    max-width: 100px;
+    width: 64px;
     display: block;
 }
 
@@ -279,6 +302,34 @@ h2 em,
     background: #fff;
 }
 
+/* Botón cerrar menú móvil */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1001;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.close-menu:hover {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .close-menu {
+        display: flex;
+    }
+}
 /* ===== HERO ===== */
 .hero {
     position: relative;
@@ -313,6 +364,7 @@ h2 em,
     display: flex;
     flex-direction: column;
     gap: var(--gap-default);
+    margin-top: 100px;
 }
 
 .hero-text h1 {
@@ -1169,12 +1221,17 @@ h2 em,
 
     .nav {
         position: fixed;
-        top: 72px;
+        top: 0;
         right: -100%;
         width: 100%;
         height: calc(100vh - 72px);
         background: var(--primary-dark);
         transition: right 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100000;
     }
 
     .nav.active {
@@ -1185,6 +1242,10 @@ h2 em,
         flex-direction: column;
         padding: var(--card-padding);
         gap: 50px;
+    }
+    .nav-list li a {
+        font-size: 32px;
+        color: #fff;
     }
 
     .hamburger {
