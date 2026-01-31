@@ -37,7 +37,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
@@ -45,13 +47,15 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
 }
+::selection {
+  background-color: var(--primary-hover);  
+  color: #111111;
+}        
 
 /* ===== UTILIDADES GLOBALES ===== */
 .container-header,
 .container {
-    width: clamp(90%, 95%, 95%);
-    /* O mejor aún, con viewport: */
-    width: clamp(90%, 92vw, 95%);
+    width: clamp(90%, 96%, 96%);
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -86,6 +90,16 @@ p {
     color: #e5e7eb;
 }
 
+@media (max-width: 768px){
+    .desk{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .movil{
+        display: none;
+    }
+}
 /* Estilos de em reutilizables */
 h2 em,
 .hero-text em {
@@ -888,7 +902,7 @@ h2 em,
     gap: var(--gap-xs);
     padding: var(--card-padding);
     background: linear-gradient(to top,
-            rgba(0, 0, 0, .80),
+            rgba(0, 0, 0, 1),
             rgba(0, 0, 0, .25),
             transparent);
     color: #fff;
@@ -914,8 +928,8 @@ h2 em,
 /* GRID */
 .planes-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
     row-gap: 30px;
 }
 

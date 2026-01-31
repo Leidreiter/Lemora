@@ -46,17 +46,20 @@
                 </button>
 
                 <ul class="nav-list">
-                    <li><a href="#">Problemas</a></li>
-                    <li><a href="#">Solución</a></li>
-                    <li><a href="#">Ecosistema</a></li>
-                    <li><a href="#">Precios</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Contactar</a></li>
+                    <li><a href="#problemas">Problemas</a></li>
+                    <li><a href="#solucion">Solución</a></li>
+                    <li><a href="#ecosistema">¿Qué ofrecemos?</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contactar">Contactar</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
-                <a href="#" class="btn-primary">Iniciar prueba gratuita</a>
+                <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20iniciar%20una%20prueba%20gratuita%20para%20mi%20negocio..."
+                    target="_blank" class="btn-primary" rel="noopener noreferrer">
+                    Iniciar prueba gratuita
+                </a>
                 <button class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -80,18 +83,19 @@
             <div class="hero-text">
                 <h1>
                     La verdadera solución<br>
-                    <em>emprendedores Argentinos<br>
-                        vendan online</em> 🇦🇷
+                    <em>para vender online<br>
+                        del emprendedor</em> 🇦🇷
                 </h1>
 
                 <p>
                     Tener tu propia tienda online debería ser una solución a tus problemas,
-                    no generarte nuevos, por eso llegó Lemora a la Argentina.
+                    no generarte nuevos, por eso llegó Lemora: Tener tu tienda online pensada para todos los
+                    emprendedores.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#" class="btn-primary">Crear mi tienda</a>
-                    <a href="#" class="btn-secondary">Conocé los planes</a>
+                    <a href="#contactar" class="btn-primary">Crear mi tienda</a>
+                    <a href="#precios" class="btn-secondary">Conocé los planes</a>
                 </div>
             </div>
 
@@ -121,7 +125,7 @@
     </section>
 
 
-    <section class="bg problemas">
+    <section class="bg problemas" id="problemas">
         <div class="container">
             <div class="problemas-header">
                 <h2>
@@ -140,10 +144,13 @@
                             vendiendo sus productos cada día en plataformas que JAMÁS te ayudan en nada,
                             eso termina hoy con Lemora.
                         </p>
-                        <a href="#">Conocé más</a>
+                        <a href="#ecosistema">Conocé más</a>
                     </div>
-                    <div class="problema-media">
+                    <div class="problema-media desk">
                         <img src="/img/marketplace.png" alt="marketplace que no te cuida">
+                    </div>
+                    <div class="problema-media movil">
+                        <img src="/img/marketplace-min.png" alt="marketplace que no te cuida">
                     </div>
                 </article>
 
@@ -156,7 +163,7 @@
                             ¿Cómo sabés si lo que te están cobrando realmente es por una tienda online…
                             o solo por algo que después no vas a poder usar ni mantener?
                         </p>
-                        <a href="#">Conocé más</a>
+                        <a href="#ecosistema">Conocé más</a>
                     </div>
                     <div class="problema-media">
                         <img src="/img/emprendedora.png" alt="emprendedores confundidos">
@@ -172,7 +179,7 @@
                             Los marketplaces te cobran comisiones por ventas absurdas, además de mantenimiento,
                             los costos para una tienda online son muy altos en nuestro país.
                         </p>
-                        <a href="#">Conocé más</a>
+                        <a href="#ecosistema">Conocé más</a>
                     </div>
                     <div class="problema-media">
                         <img src="/img/presupuestos.png" alt="presupuestos altos y confusos">
@@ -182,7 +189,7 @@
         </div>
 
 
-        <div class="soluciones container">
+        <div class="soluciones container" id="solucion">
 
             <h2 class="soluciones-title">
                 Llegó la solución definitiva<br>
@@ -216,7 +223,7 @@
                         que vos trabajes, basta de estar atado a condiciones de otros.
                         El cliente hace el pedido, paga por transferencia y la venta se concreta. Sin vueltas.
                     </p>
-                    <a href="#" class="btn-outline">Comenzá ahora</a>
+                    <a href="#precios" class="btn-outline">Comenzá ahora</a>
                 </div>
 
             </div>
@@ -241,7 +248,7 @@
                                 te mostramos en menos de 5 minutos cómo cargar tus productos y el resto lo hacemos
                                 nosotros.
                             </p>
-                            <a href="#" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                            <a href="#precios" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +272,7 @@
                                 momento,
                                 te ofrecemos llevar tu negocio al siguiente nivel, con un canal de ventas profesional.
                             </p>
-                            <a href="#" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                            <a href="#precios" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -276,7 +283,7 @@
     </section>
 
 
-    <section class="caracteristicas-section">
+    <section class="caracteristicas-section" id="ecosistema">
         <div class="container">
 
             <header class="caracteristicas-header">
@@ -389,8 +396,10 @@
                     </div>
 
                     <div class="ecosistema-overlay">
-                        <i class="fa-regular fa-copyright ecosistema-icon"></i>
-                        <span class="badge">Marcas y Logos</span>
+                        <div class="titular">
+                            <i class="fa-regular fa-copyright ecosistema-icon"></i>
+                            <span class="badge">Marcas y Logos</span>
+                        </div>
                         <h3>¿Necesitás un logo para tu marca o deseás cambiar el que ya tenés?</h3>
                     </div>
                 </article>
@@ -401,8 +410,10 @@
                     </div>
 
                     <div class="ecosistema-overlay">
-                        <i class="fa-regular fa-image ecosistema-icon"></i>
-                        <span class="badge">Diseño</span>
+                        <div class="titular">
+                            <i class="fa-regular fa-image ecosistema-icon"></i>
+                            <span class="badge">Diseño</span>
+                        </div>
                         <h3>¿Querés un diseño para tus banners? No hay problema, lo hacemos por vos.</h3>
                     </div>
                 </article>
@@ -413,8 +424,10 @@
                     </div>
 
                     <div class="ecosistema-overlay">
-                        <i class="fa-solid fa-wand-magic-sparkles ecosistema-icon"></i>
-                        <span class="badge">Inteligencia artificial</span>
+                        <div class="titular">
+                            <i class="fa-solid fa-wand-magic-sparkles ecosistema-icon"></i>
+                            <span class="badge">Inteligencia artificial</span>
+                        </div>
                         <h3>¿No tenés buenas fotografías para tus productos? Las hacemos con IA.</h3>
                     </div>
                 </article>
@@ -424,7 +437,7 @@
         </div>
     </section>
 
-    <section class="bg">
+    <section class="bg" id="precios">
         <div class="container">
 
             <header class="planes-header">
@@ -445,13 +458,16 @@
 
 
                     <ul class="features">
-                        <li>Plantilla ecommerce básica</li>
-                        <li>Sin dominio personalizado</li>
-                        <li>Hasta 10 productos</li>
-                        <li>Duración: 1 mes</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Plantilla ecommerce básica</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Sin dominio personalizado</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Hasta 10 productos</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Duración: 1 mes</li>
                     </ul>
 
-                    <a href="#" class="planes-cta">Probar ahora gratis</a>
+                    <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20iniciar%20una%20prueba%20gratuita%20para%20mi%20negocio..."
+                    target="_blank" class="planes-cta" rel="noopener noreferrer">
+                    Probar ahora gratis
+                </a>
                 </article>
 
                 <!-- PLAN BÁSICO -->
@@ -464,16 +480,19 @@
                     </div>
 
                     <ul class="features">
-                        <li>Plantilla ecommerce básica</li>
-                        <li>Dominio .com incluido</li>
-                        <li>Redes sociales vinculadas</li>
-                        <li>Productos ilimitados</li>
-                        <li>Página de gracias</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Contratación mensual</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Plantilla ecommerce básica</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Dominio .com incluido</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Redes sociales vinculadas</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Productos ilimitados</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Página de gracias</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Botón de WhatsApp</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Contratación mensual</li>
                     </ul>
 
-                    <a href="#" class="planes-cta">Contratar por 1 mes</a>
+                    <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20contratar%20el%20plan%20básico..."
+                    target="_blank" class="planes-cta" rel="noopener noreferrer">
+                    Contratar 1 mes
+                </a>
                 </article>
 
                 <!-- PLAN PREMIUM -->
@@ -484,46 +503,49 @@
                     </div>
 
                     <ul class="features">
-                        <li>Plantilla Premium con hasta 4 banners</li>
-                        <li>Carrusel de hasta 4 slides</li>
-                        <li>Productos ilimitados</li>
-                        <li>Página de preguntas frecuentes</li>
-                        <li>Página de contacto con formulario (WhatsApp)</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Diseño de miniatura del sitio</li>
-                        <li>Contratación mínima: 3 meses</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Plantilla Premium con hasta 4 banners</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Carrusel de hasta 4 slides</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Productos ilimitados</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Página de preguntas frecuentes</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Página de contacto con formulario (WhatsApp)</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Botón de WhatsApp</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Diseño de miniatura del sitio</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Contratación mínima: 3 meses</li>
                     </ul>
 
-                    <a href="#" class="planes-cta">Contratar por 3 meses</a>
+                    <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20contratar%20el%20plan%20premium..."
+                    target="_blank" class="planes-cta" rel="noopener noreferrer">
+                    Contratar por 3 meses
+                </a>
                 </article>
 
                 <!-- PLAN LUXURY -->
-                <article class="planes-card">
+                <!-- <article class="planes-card">
                     <div class="paquete">
                         <span class="badge">Luxury</span>
                         <h3>$50.000<span>/mes</span></p>
                     </div>
 
                     <ul class="features">
-                        <li>Plantilla Premium +</li>
-                        <li>Carrusel de hasta 6 slides</li>
-                        <li>+3 Email corporativos contacto@mitienda.com</li>
-                        <li>Página de preguntas frecuentes</li>
-                        <li>Página de contacto con formulario (email corporativo)</li>
-                        <li>Páginas adicionales: Sobre nosotros, Ubicación y Servicios</li>
-                        <li>Diseño miniatura y banners</li>
-                        <li>Contratación mínima: 6 meses</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Plantilla Premium +</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Carrusel de hasta 6 slides</li>
+                        <li><i class="fa-regular fa-circle-check"></i> +3 Email corporativos contacto@mitienda.com</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Página de preguntas frecuentes</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Página de contacto con formulario (email corporativo)</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Páginas adicionales: Sobre nosotros, Ubicación y Servicios</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Diseño miniatura y banners</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Contratación mínima: 6 meses</li>
                     </ul>
 
                     <a href="#" class="planes-cta">Contratar por 6 meses</a>
-                </article>
+                </article> -->
 
             </div>
 
         </div>
 
 
-        <div class="container">
+        <div class="container" id="testimonios">
 
             <!-- Header -->
             <div class="testimonios-header">
@@ -637,7 +659,7 @@
     </section>
 
     <!-- ===== CTA SECTION ===== -->
-    <section class="cta-section">
+    <section class="cta-section" id="contactar">
         <div class="container cta-content">
             <h2>
                 🇦🇷<br>
