@@ -67,6 +67,7 @@ body {
     row-gap: 60px;
 }
 
+
 /* Ya no necesitas media query para el width! */
 
 
@@ -806,6 +807,7 @@ h2 em,
     padding-left: var(--gap-lg);
 }
 
+
 .control-item {
     background: none;
     border: none;
@@ -819,6 +821,7 @@ h2 em,
 }
 
 .control-item h3 {
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -1376,7 +1379,7 @@ h2 em,
     }
 
     .ecosistema-card {
-        height: 400px;
+        height: 500px;
     }
 
     .ecosistema-overlay {
@@ -1417,7 +1420,7 @@ h2 em,
     }
 
     .caracteristicas-controls {
-        padding-left: 0;
+        padding:20px;
     }
 
     .testimonial-card {
