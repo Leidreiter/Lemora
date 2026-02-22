@@ -30,6 +30,7 @@ const nextBtn = document.querySelector(".arrow.next");
 const prevBtn = document.querySelector(".arrow.prev");
 
 let currentSlide = 0;
+let heroInterval;
 
 function updateSlides(index) {
     slides.forEach(slide => slide.classList.remove("active"));
@@ -39,15 +40,66 @@ function updateSlides(index) {
     mediaSlides[index].classList.add("active");
 }
 
-nextBtn.addEventListener("click", () => {
+function heroNext() {
     currentSlide = (currentSlide + 1) % slides.length;
     updateSlides(currentSlide);
+}
+
+function heroPrev() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlides(currentSlide);
+}
+
+function startHeroAutoplay() {
+    heroInterval = setInterval(heroNext, 5000);
+}
+
+function resetHeroAutoplay() {
+    clearInterval(heroInterval);
+    startHeroAutoplay();
+}
+
+nextBtn.addEventListener("click", () => {
+    heroNext();
+    resetHeroAutoplay();
 });
 
 prevBtn.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlides(currentSlide);
+    heroPrev();
+    resetHeroAutoplay();
 });
+
+// Swipe táctil
+(() => {
+    const heroContainer = document.querySelector(".hero-media-slide")?.closest("section") 
+        || document.querySelector(".hero-slide")?.closest("section")
+        || document.body;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    heroContainer.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    heroContainer.addEventListener("touchend", (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+
+        // Solo swipe horizontal (más de 50px y más horizontal que vertical)
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) {
+                heroNext();
+            } else {
+                heroPrev();
+            }
+            resetHeroAutoplay();
+        }
+    }, { passive: true });
+})();
+
+startHeroAutoplay();
 
 
 const stackItems = document.querySelectorAll('.store-stack .stack-item');
@@ -166,4 +218,3 @@ startAutoplay();
         });
     });
 })();
-
