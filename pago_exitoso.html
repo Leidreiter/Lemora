@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pago exitoso! - Lemora</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Floating dots background -->
+    <div class="confetti-dots" id="confettiDots"></div>
+
+    <div class="success-page">
+
+        <!-- ===== MINI HEADER ===== -->
+        <header class="header" style="background: rgba(0,0,0,0.2); backdrop-filter: blur(8px);">
+            <div class="redes">
+                <div class="container-redes">
+                    <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="header-inner container-header">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="logo Lemora" class="logo">
+                </a>
+            </div>
+        </header>
+
+        <!-- ===== MAIN ===== -->
+        <main class="success-main">
+            <div class="success-card">
+                <!-- Check icon -->
+                <div class="success-icon-wrap">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <!-- Heading -->
+                <div class="success-heading">
+                    <span class="success-label">¡Todo listo!</span>
+                    <h1 class="success-title">
+                        Tu pago fue<br>
+                        <em>procesado con éxito</em> 🎉
+                    </h1>
+                </div>
+
+                <p class="success-subtitle">
+                    Gracias por confiar en Lemora. En las próximas horas nos vamos a poner en contacto con vos para dejar todo operativo.
+                </p>
+
+                <!-- Steps -->
+                <div class="success-steps">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <strong>Confirmación de pago</strong>
+                            <span>MercadoPago ya procesó tu suscripción exitosamente.</span>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <strong>Te escribimos en 24 hs</strong>
+                            <span>Un miembro de nuestro equipo se va a comunicar con vos por WhatsApp para empezar.</span>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <strong>Tu tienda online en 24/48 hs</strong>
+                            <span>Completás la plantilla de productos y publicamos tu tienda al mundo.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="success-actions">
+                    <a href="https://wa.me/543515957014?text=Hola!%20Acabo%20de%20realizar%20el%20pago%20de%20mi%20plan%20en%20Lemora%20y%20quiero%20coordinar%20los%20próximos%20pasos."
+                        target="_blank" rel="noopener noreferrer" class="btn-success-wa">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Escribinos por WhatsApp ahora
+                    </a>
+                    <a href="index.html" class="btn-success-home">
+                        <i class="fa-solid fa-house"></i>
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <p class="copyright">
+                        © 2026 Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
+                        <a href="https://soymarcus.dev" target="_blank">
+                            <img src="img/devBy.svg" alt="logo soymarcusdev" class="footer-logo">
+                        </a>
+                    </p>
+                </div>
+    
+                <div class="footer-right">
+                    <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Generate floating dots
+        const container = document.getElementById('confettiDots');
+        const colors = ['#02c39a', '#ffffff', '#f0f3bd', '#00a896', '#a8f5e0'];
+
+        for (let i = 0; i < 30; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.style.left = Math.random() * 100 + 'vw';
+            dot.style.width = dot.style.height = (Math.random() * 6 + 4) + 'px';
+            dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+            dot.style.animationDuration = (Math.random() * 12 + 10) + 's';
+            dot.style.animationDelay = (Math.random() * 8) + 's';
+            container.appendChild(dot);
+        }
+    </script>
+
+</body>
+</html>

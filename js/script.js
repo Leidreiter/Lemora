@@ -9,8 +9,8 @@ hamburger.addEventListener("click", (e) => {
 
 // Cerrar al hacer clic fuera del menú
 document.addEventListener("click", (e) => {
-    if (nav.classList.contains("active") && 
-        !nav.contains(e.target) && 
+    if (nav.classList.contains("active") &&
+        !nav.contains(e.target) &&
         !hamburger.contains(e.target)) {
         nav.classList.remove("active");
     }
@@ -71,7 +71,7 @@ prevBtn.addEventListener("click", () => {
 
 // Swipe táctil
 (() => {
-    const heroContainer = document.querySelector(".hero-media-slide")?.closest("section") 
+    const heroContainer = document.querySelector(".hero-media-slide")?.closest("section")
         || document.querySelector(".hero-slide")?.closest("section")
         || document.body;
 
@@ -218,3 +218,5 @@ startAutoplay();
         });
     });
 })();
+
+
