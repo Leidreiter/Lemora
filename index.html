@@ -17,57 +17,7 @@
 <body>
 
 
-    <header class="header">
-
-        <div class="redes">
-            <div class="container-redes">
-                <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="header-inner container-header">
-            <img src="img/logo.svg" alt="logo Lemora" class="logo">
-
-            <nav class="nav" id="nav">
-                <!-- Botón cerrar -->
-                <button class="close-menu" id="close-menu">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-
-                <ul class="nav-list">
-                    <li><a href="#problemas">Problemas</a></li>
-                    <li><a href="#solucion">Solución</a></li>
-                    <li><a href="#ecosistema">¿Qué ofrecemos?</a></li>
-                    <li><a href="#precios">Precios</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#contactar">Contactar</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20iniciar%20una%20prueba%20gratuita%20para%20mi%20negocio..."
-                    target="_blank" class="btn-primary" rel="noopener noreferrer">
-                    Iniciar prueba gratuita
-                </a>
-                <button class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div id="site-header"></div>
 
     <section class="hero">
         <div class="hero-slider" id="heroSlider">
@@ -390,7 +340,7 @@
 
             <div class="ecosistema-grid">
 
-                <article class="ecosistema-card">
+                <a href="identidad.html" class="ecosistema-card" style="text-decoration:none;color:inherit;">
                     <div class="ecosistema-bg">
                         <img src="/img/identidad.png" alt="Diseño y desarrollo de identidad corporativa profesional">
                     </div>
@@ -402,7 +352,7 @@
                         </div>
                         <h3>¿Necesitás un logo para tu marca o deseás cambiar el que ya tenés?</h3>
                     </div>
-                </article>
+                </a>
 
                 <article class="ecosistema-card">
                     <div class="ecosistema-bg">
@@ -555,8 +505,8 @@
 
                         <article class="testimonial-card active">
                             <div class="testimonial-media">
-                                <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600"
-                                    alt="">
+                                <img src="img/testimonio1.jpg"
+                                    alt="Carolina Villegas">
                             </div>
                             <div class="testimonial-content">
                                 <i class="fa-solid fa-quote-left"></i>
@@ -662,34 +612,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <p class="copyright">
-                    © 2026 Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
-                    <a href="https://soymarcus.dev" target="_blank">
-                        <img src="img/devBy.svg" alt="logo soymarcusdev" class="footer-logo">
-                    </a>
-                </p>
-            </div>
-
-            <div class="footer-right">
-                <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
 
 
@@ -697,6 +620,7 @@
 
 
 
+    <script src="js/template.js"></script>
     <script src="js/script.js"></script>
 </body>
 
