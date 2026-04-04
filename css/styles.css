@@ -2506,6 +2506,7 @@ h2 em,
     font-size: 16px;
     font-weight: 500;
     transition: all 0.25s ease;
+    border: 2px solid #fff;
 }
 
 .btn-success-wa:hover {
@@ -2514,9 +2515,6 @@ h2 em,
     border: 2px solid #fff;
 }
 
-.btn-success-wa i {
-    font-size: 18px;
-}
 
 .btn-success-home {
     display: flex;
