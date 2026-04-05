@@ -43,7 +43,7 @@
             </div>
 
             <div class="header-inner container-header">
-                <a href="index.html">
+                <a href="/">
                     <img src="img/logo.svg" alt="logo Lemora" class="logo">
                 </a>
 
