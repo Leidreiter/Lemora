@@ -1590,7 +1590,7 @@ h2 em,
 
 .plan-name {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
 }
 
@@ -1601,7 +1601,7 @@ h2 em,
 }
 
 .plan-price .amount {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 700;
     line-height: 1;
 }
