@@ -1,21 +1,28 @@
 {
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/index.html"
-      },
-      {
-        "source": "/membresias",
-        "destination": "/membresias.html"
-      },
-      {
-        "source": "/pago_exitoso",
-        "destination": "/pago_exitoso.html"
-      },
-      {
-        "source": "/identidad",
-        "destination": "/identidad.html"
-      }
-
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/membresias",
+      "destination": "/membresias.html"
+    },
+    {
+      "source": "/pago_exitoso",
+      "destination": "/pago_exitoso.html"
+    },
+    {
+      "source": "/identidad",
+      "destination": "/identidad.html"
+    },
+    {
+      "source": "/diseno",
+      "destination": "/diseno.html"
+    },
+    {
+      "source": "/fotoproductos",
+      "destination": "/fotoproductos.html"
+    }
+  ]
+}
