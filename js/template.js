@@ -57,6 +57,7 @@
                         <li><a href="index.html#ecosistema">¿Qué ofrecemos?</a></li>
                         <li><a href="index.html#precios">Precios</a></li>
                         <li><a href="index.html#testimonios">Testimonios</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="index.html#contactar">Contactar</a></li>
                     </ul>
                 </nav>
