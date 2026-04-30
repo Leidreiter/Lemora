@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40 Ideas de Contenido Viral — Catálogos Web</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1a2b;color:#fff;padding:24px;min-height:100vh}
+.header{padding:0 0 1.25rem}
+.header h1{font-size:18px;font-weight:500;color:#fff}
+.header p{font-size:13px;color:#94a3b8;margin-top:4px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem}
+.filter-btn{font-size:12px;padding:5px 12px;border:1px solid rgba(255,255,255,0.18);border-radius:20px;background:transparent;cursor:pointer;color:#94a3b8;transition:all 0.15s;font-family:inherit}
+.filter-btn.active{background:#02c39a;color:#0b1a2b;border-color:#02c39a;font-weight:600}
+.filter-btn:hover{border-color:#02c39a;color:#fff}
+.stats-row{display:flex;gap:10px;margin-bottom:1.25rem}
+.stat-card{flex:1;background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 12px;text-align:center;border:1px solid rgba(255,255,255,0.1)}
+.stat-num{font-size:20px;font-weight:600;color:#02c39a}
+.stat-label{font-size:11px;color:#94a3b8;margin-top:2px}
+.ideas-grid{display:flex;flex-direction:column;gap:10px}
+.idea-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1rem 1.25rem;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden}
+.idea-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#02c39a;opacity:0;transition:opacity 0.2s}
+.idea-card:hover{border-color:rgba(2,195,154,0.4);transform:translateY(-1px)}
+.idea-card:hover::before{opacity:1}
+.idea-card.expanded{border-color:rgba(2,195,154,0.5)}
+.idea-card.expanded::before{opacity:1}
+.idea-header{display:flex;align-items:flex-start;gap:10px}
+.idea-num{font-size:11px;font-weight:600;color:#02c39a;min-width:28px;margin-top:3px;opacity:0.7}
+.idea-title{font-size:14px;font-weight:500;color:#fff;flex:1;line-height:1.55}
+.badges{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;padding-left:38px}
+.badge{font-size:10px;padding:3px 10px;border-radius:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.badge-reels{background:rgba(167,139,250,0.18);color:#a78bfa}
+.badge-carrusel{background:rgba(2,195,154,0.18);color:#02c39a}
+.badge-stories{background:rgba(251,191,36,0.18);color:#fbbf24}
+.badge-enlivo{background:rgba(239,68,68,0.18);color:#fca5a5}
+.arrow{font-size:13px;color:#94a3b8;margin-left:6px;transition:transform 0.2s;display:inline-block}
+.expanded .arrow{transform:rotate(90deg)}
+.idea-body{display:none;margin-top:14px;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;flex-direction:column;gap:12px;padding-left:38px}
+.idea-card.expanded .idea-body{display:flex;animation:fadeSlide 0.2s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.field-label{font-size:10px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;font-weight:600}
+.field-value{font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6}
+.angulo{color:#a78bfa}
+.promesa{color:#02c39a}
+.cta-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 14px;background:rgba(2,195,154,0.1);border:1px solid rgba(2,195,154,0.25);border-radius:999px;color:#02c39a;margin-top:4px}
+.counter{font-size:12px;color:#94a3b8;margin-bottom:10px}
+.counter span{color:#02c39a;font-weight:600}
+.hidden{display:none}
+
+@media(max-width:600px){
+  .stats-row{flex-wrap:wrap}
+  .stat-card{min-width:calc(50% - 5px)}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>40 ideas de contenido con alto potencial viral</h1>
+  <p>Nicho: catálogos web para emprendedores argentinos — Filtrá por formato y hacé clic para ver el detalle</p>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filter('todos',this)">Todos (40)</button>
+  <button class="filter-btn" onclick="filter('Reels',this)">Reels (23)</button>
+  <button class="filter-btn" onclick="filter('Carrusel',this)">Carrusel (11)</button>
+  <button class="filter-btn" onclick="filter('Stories',this)">Stories (4)</button>
+  <button class="filter-btn" onclick="filter('En Vivo',this)">En Vivo (2)</button>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-num">23</div><div class="stat-label">Reels</div></div>
+  <div class="stat-card"><div class="stat-num">11</div><div class="stat-label">Carrusel</div></div>
+  <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Stories</div></div>
+  <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">En Vivo</div></div>
+</div>
+
+<p class="counter">Mostrando <span id="counter">40</span> de 40 ideas</p>
+<div class="ideas-grid" id="grid"></div>
+
+<script>
+const ideas = [
+  {titulo:"Tenés negocio pero no tenés catálogo: estás perdiendo ventas todos los días",angulo:"No es que no vendés porque el producto es malo — es porque el cliente no puede ver bien qué ofrecés.",promesa:"Descubrí por qué tu WhatsApp lleno de fotos sueltas te hace perder clientes sin que te des cuenta.",formato:"Reels",gatillo:"Culpa productiva — el emprendedor se identifica y lo comparte porque le habla directo.",cta:"Guardalo y mandáselo a ese amigo que vende por WhatsApp sin catálogo."},
+  {titulo:"Comparé mandar fotos por WhatsApp vs tener un catálogo web — el resultado me sorprendió",angulo:"No es una cuestión de tecnología, es una cuestión de percepción de valor.",promesa:"Te muestro con números reales por qué un catálogo web multiplica el precio que podés cobrar.",formato:"Carrusel",gatillo:"Utilidad masiva + comparación concreta — ideal para guardar y volver a leer.",cta:"Guardá este carrusel antes de hacer tu próxima venta."},
+  {titulo:"Mi cliente me dijo 'me parece caro' — después le mostré el catálogo y compró sin regatear",angulo:"El precio no era el problema. El problema era la presentación.",promesa:"Una historia real que demuestra que la forma en que mostrás tu producto vale más que el descuento.",formato:"Reels",gatillo:"Identificación emocional — todo emprendedor ha vivido esto. Se comparte solo.",cta:"¿Te pasó algo así? Contame en los comentarios."},
+  {titulo:"Dejé de usar Instagram como catálogo y mis ventas subieron — acá te explico por qué",angulo:"Instagram no es tu catálogo. Es tu vidriera. No son lo mismo.",promesa:"Aprendé la diferencia entre mostrar y vender, y cómo separarlos te cambia el negocio.",formato:"Reels",gatillo:"Polémica + contraintuitivo — muchos están haciendo exactamente esto y van a reaccionar.",cta:"Seguime para ver cómo armo un catálogo sin Instagram ni e-commerce."},
+  {titulo:"Armé un catálogo web profesional en 48 horas sin saber nada de programación — paso a paso",angulo:"No necesitás contratar a nadie ni aprender a programar para tener presencia digital real.",promesa:"Te muestro exactamente cómo lo hice usando Google Sheets y sin gastar una fortuna.",formato:"Carrusel",gatillo:"Utilidad masiva + curiosidad — todo el mundo quiere saber cómo se hace.",cta:"Guardalo para cuando tengas 20 minutos y quieras implementarlo."},
+  {titulo:"El error que cometen el 90% de los emprendedores que venden por redes sociales",angulo:"Invertís horas en contenido pero no tenés un lugar donde tu cliente pueda comprar con calma.",promesa:"Este error silencioso te está costando ventas cada semana y es súper fácil de corregir.",formato:"Reels",gatillo:"Miedo a estar cometiendo un error — el emprendedor se lo comparte a su red para alertarlos.",cta:"Etiquetá a ese emprendedor que necesita escuchar esto."},
+  {titulo:"¿Cuánto cuesta tener un catálogo web profesional en Argentina hoy? La respuesta te va a sorprender",angulo:"La mayoría cree que es caro. En realidad cuesta menos que un almuerzo por mes.",promesa:"Desglose real de precios para que tomes la decisión con información, no con suposiciones.",formato:"Carrusel",gatillo:"Sorpresa + utilidad — rompe una creencia instalada. Muy compartible.",cta:"Mandáselo a alguien que cree que digitalizar su negocio sale una fortuna."},
+  {titulo:"Si no tenés presencia digital hoy en Argentina, ya empezaste a perder frente a tu competencia",angulo:"No es alarmismo — los números de consumo online en Argentina dicen exactamente eso.",promesa:"Datos reales para que entiendas la urgencia de tener un catálogo web en 2025.",formato:"Reels",gatillo:"Urgencia + dato duro — activa el miedo a quedarse atrás, que es uno de los más virales.",cta:"Compartí esto con un emprendedor que todavía lo está pensando."},
+  {titulo:"Checklist: ¿Tu negocio está listo para vender online o todavía falta algo?",angulo:"Tener redes no es tener presencia digital. Son cosas distintas y confundirlas sale caro.",promesa:"Una lista de verificación honesta para saber en qué punto estás realmente.",formato:"Carrusel",gatillo:"Lista de verificación — uno de los formatos más guardados en Instagram.",cta:"Guardalo y hacé el check esta semana."},
+  {titulo:"Le pregunté a 10 clientes por qué abandonaban la conversación de WhatsApp antes de comprar",angulo:"La respuesta no fue el precio. Fue la desorganización de la información.",promesa:"Lo que tus clientes nunca te van a decir pero que te cuesta ventas todos los días.",formato:"Reels",gatillo:"Revelación inesperada — los emprendedores sienten que los están describiendo a ellos.",cta:"¿Cuántas veces te dejaron en visto en WhatsApp? Contame en los comentarios."},
+  {titulo:"Antes y después: así quedó el catálogo de una emprendedora de indumentaria de Córdoba",angulo:"El cambio no fue solo visual — cambió cuánto y cómo le compraban.",promesa:"Un caso real con números antes y después para que veas el impacto concreto.",formato:"Carrusel",gatillo:"Prueba social + transformación visual — las historias reales generan confianza y se comparten.",cta:"¿Querés que hagamos esto para tu negocio? Escribime."},
+  {titulo:"Por qué una tienda de Mercado Libre o Tienda Nube NO es lo mismo que un catálogo web",angulo:"No todas las herramientas de venta online sirven para todos los modelos de negocio.",promesa:"Entendé cuándo te conviene un catálogo y cuándo no, sin que nadie te venda la solución equivocada.",formato:"Carrusel",gatillo:"Polémica + educación — mucha gente tiene opiniones fuertes sobre esto. Genera comentarios.",cta:"¿Usás Tienda Nube o ML? Contame tu experiencia abajo."},
+  {titulo:"Cómo pasé de mandar listas de precios por PDF a tener un catálogo web que se actualiza solo",angulo:"El PDF está desactualizado apenas lo mandás. El catálogo web, no.",promesa:"El sistema simple que uso para que mis precios, fotos y descripciones estén siempre al día.",formato:"Reels",gatillo:"Transformación personal + utilidad práctica — muy compartible entre emprendedores.",cta:"Guardá esto si todavía usás PDFs o listas por WhatsApp."},
+  {titulo:"¿Cuánto tiempo por semana perdés contestando las mismas preguntas en WhatsApp?",angulo:"El tiempo que perdés respondiendo '¿cuánto sale?' y '¿qué talles tenés?' es tiempo que no vendés.",promesa:"Calculá el costo real de no tener un catálogo y te vas a motivar solo a hacer el cambio.",formato:"Stories",gatillo:"Pregunta directa que activa la autoconciencia — encuesta o poll interactivo.",cta:"Respondé la encuesta y te cuento qué podés hacer con ese tiempo libre."},
+  {titulo:"El catálogo web que se actualiza desde el celular: lo manejé en pijama a las 11 de la noche",angulo:"La simplicidad no es un lujo — es el único modelo sostenible para un emprendedor sin equipo.",promesa:"Te muestro en 60 segundos cómo actualizar un producto desde el celular sin entrar a ningún panel raro.",formato:"Reels",gatillo:"Identificación + humor de emprendedor — el pijama y las 11 de la noche son la vida del dueño.",cta:"¿A qué hora manejás tu negocio vos? Contame en los comentarios."},
+  {titulo:"Si tu cliente tiene que preguntarte el precio, ya te complicaste la venta",angulo:"Cada fricción en el proceso de compra reduce las posibilidades de que el cliente te elija.",promesa:"La psicología detrás de por qué los precios visibles aumentan las ventas más que los descuentos.",formato:"Reels",gatillo:"Dato contraintuitivo + educación — rompe una creencia común y genera guardados.",cta:"Guardalo si creés que no mostrar precios te da poder de negociación."},
+  {titulo:"Freelancer: dejá de mandar propuestas en Word y empezá a mandar un catálogo de servicios",angulo:"Una propuesta en Word comunica amateur. Un catálogo web comunica profesional establecido.",promesa:"Cómo presentar tus servicios de una forma que justifique un precio más alto sin cambiar nada de lo que ofrecés.",formato:"Carrusel",gatillo:"Dolor específico del freelancer + solución accionable — se comparte en comunidades de freelancers.",cta:"Mandáselo a ese freelancer que todavía manda propuestas en Word."},
+  {titulo:"¿Qué pasa cuando un cliente busca tu negocio en Google y no encuentra nada?",angulo:"No encontrarte en Google no es neutro — activamente destruye tu credibilidad.",promesa:"Lo que pasa en el cerebro del comprador cuando busca tu marca y no aparece nada.",formato:"Reels",gatillo:"Miedo a la inexistencia online — activa urgencia real. Muy compartible.",cta:"Buscate en Google ahora mismo. ¿Qué encontraste? Contame abajo."},
+  {titulo:"Modelo de membresía vs diseñador web: hice los números y el resultado es brutal",angulo:"Pagar un diseño web una vez no es más barato — cuando lo actualizás, ahí empiezan los gastos.",promesa:"Comparativa real de costos para que elijas con datos, no con intuición.",formato:"Carrusel",gatillo:"Datos concretos + polémica — los diseñadores van a opinar. Eso es alcance gratis.",cta:"Guardá la comparativa antes de contratar a nadie para tu sitio."},
+  {titulo:"Vendí más en un fin de semana con el catálogo web que en todo el mes anterior sin él",angulo:"No fue suerte — fue que el catálogo hizo el trabajo de venta mientras yo no estaba disponible.",promesa:"El antes y después de tener un lugar centralizado donde tus clientes pueden ver y elegir solos.",formato:"Reels",gatillo:"Testimonio propio + número concreto — los resultados reales son los más compartidos.",cta:"Escribime si querés ver si esto aplica a tu tipo de negocio."},
+  {titulo:"3 tipos de emprendedores que deberían tener un catálogo web y todavía no lo saben",angulo:"No es solo para el que vende ropa — hay negocios que lo necesitan más y ni lo consideraron.",promesa:"Descubrí si tu negocio es uno de los que más se beneficia de tener un catálogo web ahora.",formato:"Carrusel",gatillo:"Identificación de audiencias — cada persona se identifica y lo comparte a quienes encajan.",cta:"Etiquetá abajo al tipo de emprendedor que más te representa."},
+  {titulo:"Cómo uso Google Sheets como base de datos de mi catálogo (sin saber programar)",angulo:"Google Sheets no es solo una planilla — puede ser el motor de tu negocio digital.",promesa:"El truco que usan negocios serios para centralizar su información sin pagar herramientas caras.",formato:"Reels",gatillo:"Utilidad práctica + curiosidad tecnológica — la gente lo guarda para implementarlo.",cta:"Guardalo para el domingo cuando tengas tiempo de armarlo."},
+  {titulo:"Por qué los emprendedores con catálogo web cierran ventas más rápido que los que no tienen",angulo:"La velocidad de cierre de venta tiene más que ver con la presentación que con el producto.",promesa:"La razón psicológica por la que un catálogo web reduce el tiempo entre el primer contacto y la compra.",formato:"Carrusel",gatillo:"Dato de comportamiento del consumidor — educativo y muy guardado.",cta:"Compartí esto con alguien que dice que igual vende bien sin catálogo."},
+  {titulo:"En vivo: te muestro cómo armar un catálogo web desde cero en tiempo real",angulo:"Nada de tutoriales editados — lo hago frente a todos y si algo falla, lo resolvemos en vivo.",promesa:"En 60 minutos vas a ver el proceso completo y tener todo lo que necesitás para hacerlo vos.",formato:"En Vivo",gatillo:"Urgencia + transparencia radical — los en vivos generan FOMO y comentarios masivos.",cta:"Activá la campanita para que no te lo pierdas — lo hago el próximo viernes."},
+  {titulo:"La pregunta que te hacen tus clientes que revela que necesitás un catálogo urgente",angulo:"Cuando tu cliente te pregunta '¿qué más tenés?', es una señal de alarma, no de interés.",promesa:"Identificá las señales que tus clientes te dan a diario de que tu forma de mostrar productos no alcanza.",formato:"Stories",gatillo:"Reconocimiento de situación cotidiana — el emprendedor se identifica al instante.",cta:"¿Cuántas veces por semana te hacen esa pregunta? Respondé la encuesta."},
+  {titulo:"Le di acceso a mi catálogo a una clienta nueva sin hablar — compró sola. Así fue",angulo:"La mejor venta es la que se hace sola. Para eso necesitás una herramienta que venda por vos.",promesa:"El flujo de venta que podés automatizar aunque seas un negocio unipersonal sin equipo.",formato:"Reels",gatillo:"Caso real + resultado sorprendente — la gente quiere saber exactamente cómo se hizo.",cta:"¿Querés que te cuente el flujo completo? Escribime 'CATÁLOGO' por DM."},
+  {titulo:"5 cosas que debería tener tu catálogo web y que probablemente no tenés",angulo:"Tener catálogo no alcanza — hay elementos específicos que separan un catálogo que vende de uno que no.",promesa:"La lista concreta de lo que hace a un catálogo realmente efectivo para vender en Argentina.",formato:"Carrusel",gatillo:"Lista de verificación + gap de conocimiento — la gente lo guarda para mejorar el suyo.",cta:"Guardalo y revisá tu catálogo actual con esta lista."},
+  {titulo:"Cómo le expliqué a mi mamá qué es un catálogo web en 30 segundos (y ella lo entendió)",angulo:"Si no podés explicar tu herramienta digital de forma simple, el problema no es la audiencia.",promesa:"La explicación más sencilla del mundo de qué es un catálogo web y para qué sirve.",formato:"Reels",gatillo:"Humor + simplicidad — el formato 'le expliqué a mi mamá' es uno de los más compartidos.",cta:"Mandáselo a esa persona de tu familia que todavía no entiende a qué te dedicás."},
+  {titulo:"En vivo: Q&A sobre catálogos web — respondemos todas las dudas sin filtro",angulo:"No hay preguntas tontas — si lo estás pensando, hay 100 personas más que también quieren saber.",promesa:"Una hora de respuestas directas a las preguntas reales que frenan a los emprendedores para dar el paso.",formato:"En Vivo",gatillo:"Comunidad + participación activa — el en vivo genera conversación y relación.",cta:"Dejá tu pregunta en los comentarios antes del en vivo para que la respondamos."},
+  {titulo:"Si cerrás tu Instagram mañana, ¿tus clientes pueden encontrarte igual? Yo sí. Te cuento cómo.",angulo:"Construir sobre plataformas que no controlás es construir sobre arena — el catálogo web es tuyo.",promesa:"La razón por la que depender solo de Instagram para vender es el riesgo más subestimado del emprendedor actual.",formato:"Reels",gatillo:"Miedo real + independencia — el fantasma de que Instagram te cierre la cuenta es universal.",cta:"Guardalo para cuando estés listo para dejar de depender de los algoritmos."},
+  {titulo:"Tu catálogo web trabaja mientras vos dormís — acá te muestro cuánto vendí de madrugada",angulo:"Un emprendedor unipersonal no puede estar disponible 24/7. Su catálogo, sí.",promesa:"Cómo configurar un catálogo que cierre ventas solo, sin que tengas que estar presente en cada conversación.",formato:"Reels",gatillo:"Sueño del ingreso pasivo + caso real — uno de los gatillos más virales entre emprendedores.",cta:"Guardalo si querés que tu negocio venda aunque no estés mirando el celular."},
+  {titulo:"El link en bio que te hace perder el 70% de tus visitas (y cómo arreglarlo hoy)",angulo:"Un link en bio que lleva a tu Instagram principal es como abrir una puerta que da a otra puerta.",promesa:"El destino correcto para ese link y por qué un catálogo web es la única respuesta con sentido.",formato:"Reels",gatillo:"Error común + solución inmediata — la gente lo comparte porque siente que la están describiendo.",cta:"Revisá tu link en bio ahora mismo. ¿A dónde lleva? Contame abajo."},
+  {titulo:"Mandé el link de mi catálogo a un cliente y me compró sin preguntarme nada — esto es lo que pasó",angulo:"Cuando la información está bien organizada, el cliente decide solo. Eso es un sistema de ventas real.",promesa:"El flujo completo desde que compartís el link hasta que el cliente te escribe listo para pagar.",formato:"Reels",gatillo:"Resultado concreto + curiosidad — la gente quiere replicar exactamente lo que funcionó.",cta:"Escribime 'LINK' por DM y te cuento cómo armar ese mismo flujo para tu negocio."},
+  {titulo:"Comparé dos emprendedoras del mismo rubro: una con catálogo, otra sin él — mirá la diferencia",angulo:"El producto no era mejor ni peor. La diferencia estaba en cómo se presentaban al cliente.",promesa:"Un análisis lado a lado de dos negocios reales para que veas qué separa al que vende del que no.",formato:"Reels",gatillo:"Comparación real + prueba social — genera debate y hace que ambas audiencias lo compartan.",cta:"¿Con cuál te identificás más? Contame en los comentarios."},
+  {titulo:"Me llegó un cliente de otra provincia gracias a mi catálogo web — sin haberlo buscado",angulo:"Un negocio sin catálogo web existe solo donde está físicamente. Con catálogo, existe en todo el país.",promesa:"Cómo el catálogo web rompe la barrera geográfica y te abre clientes que jamás te hubieran encontrado.",formato:"Reels",gatillo:"Expansión geográfica + sorpresa real — el emprendedor local que sueña con escalar se identifica al instante.",cta:"Guardalo si querés dejar de depender solo de los clientes de tu barrio o ciudad."},
+  {titulo:"El momento exacto en que un cliente decide si te compra o se va a buscar a otro",angulo:"Hay una ventana de 8 segundos donde el cliente evalúa si tu negocio es serio o no lo es.",promesa:"Lo que tiene que ver tu cliente en esos 8 segundos para que se quede, confíe y compre.",formato:"Reels",gatillo:"Dato de comportamiento + urgencia — activa la autoconsciencia del emprendedor sobre su primera impresión.",cta:"¿Qué ve tu cliente los primeros 8 segundos de conocer tu negocio? Contame."},
+  {titulo:"Así reaccionó mi cliente cuando le mandé el link del catálogo en vez de fotos sueltas por WhatsApp",angulo:"El mismo producto, presentado de dos formas distintas, genera emociones completamente distintas en el cliente.",promesa:"La diferencia real que nota el cliente entre recibir un catálogo y recibir un bombardeo de fotos sin orden.",formato:"Reels",gatillo:"Humor de situación + identificación — cualquier emprendedor que manda fotos por WA se ríe y lo guarda.",cta:"Etiquetá a alguien que todavía manda 47 fotos sueltas por WhatsApp."},
+  {titulo:"3 clientes me pidieron recomendarlos con otros porque mi catálogo los 'dejó impresionados'",angulo:"Un catálogo profesional no solo vende — convierte compradores en promotores de tu marca.",promesa:"Cómo una buena presentación digital genera boca en boca digital, el canal de ventas más barato que existe.",formato:"Reels",gatillo:"Prueba social + efecto multiplicador — el emprendedor quiere ese mismo resultado y lo guarda.",cta:"¿Cuándo fue la última vez que un cliente te recomendó sin que se lo pidieras? Contame."},
+  {titulo:"La diferencia entre un emprendedor que cobra caro y uno que no puede subir sus precios",angulo:"El precio que podés cobrar no depende solo de lo que ofrecés — depende de cómo lo presentás.",promesa:"Por qué los emprendedores con catálogo web pueden justificar precios más altos que los que no tienen.",formato:"Reels",gatillo:"Aspiracional + dolor económico — toca el punto más sensible del emprendedor: no poder cobrar lo que vale.",cta:"Guardalo si alguna vez sentiste que no podías cobrar lo que realmente vale tu trabajo."},
+  {titulo:"Actualicé mis precios en el catálogo en 2 minutos desde el celular — sin pedirle nada a nadie",angulo:"La autonomía es el activo más valioso de un emprendedor independiente.",promesa:"Por qué tener el control total de tu catálogo sin depender de un diseñador cambia la dinámica de tu negocio.",formato:"Reels",gatillo:"Independencia + practicidad extrema — el emprendedor que odia depender de terceros lo comparte de inmediato.",cta:"¿Cuánto tardás vos en actualizar tus precios hoy? Contame en los comentarios."}
+];
+
+const fmtClass = {Reels:'badge-reels',Carrusel:'badge-carrusel',Stories:'badge-stories','En Vivo':'badge-enlivo'};
+
+function render(list){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  document.getElementById('counter').textContent = list.length;
+  list.forEach((idea,i)=>{
+    const realIdx = ideas.indexOf(idea);
+    const card = document.createElement('div');
+    card.className = 'idea-card';
+    card.innerHTML = `
+      <div class="idea-header">
+        <span class="idea-num">#${String(realIdx+1).padStart(2,'0')}</span>
+        <span class="idea-title">${idea.titulo} <span class="arrow">›</span></span>
+      </div>
+      <div class="badges"><span class="badge ${fmtClass[idea.formato]}">${idea.formato}</span></div>
+      <div class="idea-body">
+        <div><div class="field-label">Ángulo</div><div class="field-value angulo">${idea.angulo}</div></div>
+        <div><div class="field-label">Promesa</div><div class="field-value promesa">${idea.promesa}</div></div>
+        <div><div class="field-label">Gatillo de compartido</div><div class="field-value">${idea.gatillo}</div></div>
+        <div><div class="field-label">Llamado a la acción</div><div class="cta-chip">↗ ${idea.cta}</div></div>
+      </div>`;
+    card.addEventListener('click',()=>card.classList.toggle('expanded'));
+    grid.appendChild(card);
+  });
+}
+
+function filter(fmt, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render(fmt==='todos' ? ideas : ideas.filter(i=>i.formato===fmt));
+}
+
+render(ideas);
+</script>
+</body>
+</html>

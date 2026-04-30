@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Hooks para Reels — Catálogos Web</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1a2b;color:#fff;padding:28px 24px;min-height:100vh}
+
+.page-header{margin-bottom:28px}
+.page-header h1{font-size:20px;font-weight:600;color:#fff;margin-bottom:6px}
+.page-header p{font-size:13px;color:#94a3b8;line-height:1.6}
+
+/* FILTERS */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.fbtn{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:#94a3b8;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.fbtn:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.fbtn.active{background:var(--c,#02c39a);border-color:var(--c,#02c39a);color:#0b1a2b}
+
+/* HOOK CARDS */
+.hooks-list{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.hook-card{border-radius:14px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);padding:18px 20px;display:flex;gap:16px;align-items:flex-start;transition:all 0.2s;position:relative;overflow:hidden}
+.hook-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--accent,#02c39a);opacity:0;transition:opacity 0.2s}
+.hook-card:hover{background:rgba(255,255,255,0.07);border-color:var(--accent,rgba(2,195,154,0.4))}
+.hook-card:hover::before{opacity:1}
+.hook-card.top5{border-color:rgba(240,243,189,0.3);background:rgba(240,243,189,0.04)}
+.hook-card.top5::before{opacity:1;background:#f0f3bd}
+.hook-card.hidden{display:none}
+
+.hook-meta{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:36px}
+.hook-num{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3)}
+.top5-star{font-size:14px;color:#f0f3bd;display:none}
+.hook-card.top5 .top5-star{display:block}
+
+.hook-body{flex:1}
+.hook-style-tag{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 10px;border-radius:999px;margin-bottom:10px;display:inline-block}
+.hook-text{font-size:17px;font-weight:600;line-height:1.45;color:#fff;margin-bottom:10px;font-style:italic}
+.hook-word-count{font-size:11px;color:rgba(255,255,255,0.3)}
+
+.hook-psych{font-size:12px;color:#94a3b8;line-height:1.6;border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;margin-top:4px;display:none}
+.hook-card.top5 .hook-psych{display:block}
+.hook-psych strong{color:#f0f3bd}
+
+/* STYLE COLORS */
+.s1{--accent:#02c39a} .tag-s1{background:rgba(2,195,154,0.15);color:#02c39a}
+.s2{--accent:#a78bfa} .tag-s2{background:rgba(167,139,250,0.15);color:#a78bfa}
+.s3{--accent:#fbbf24} .tag-s3{background:rgba(251,191,36,0.15);color:#fbbf24}
+.s4{--accent:#60a5fa} .tag-s4{background:rgba(96,165,250,0.15);color:#60a5fa}
+.s5{--accent:#f87171} .tag-s5{background:rgba(248,113,113,0.15);color:#f87171}
+.s6{--accent:#fb923c} .tag-s6{background:rgba(251,146,60,0.15);color:#fb923c}
+.s7{--accent:#e879f9} .tag-s7{background:rgba(232,121,249,0.15);color:#e879f9}
+.s8{--accent:#34d399} .tag-s8{background:rgba(52,211,153,0.15);color:#34d399}
+
+/* TOP 5 SECTION */
+.top5-section{margin-top:8px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#f0f3bd;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(240,243,189,0.2)}
+
+.ranking-list{display:flex;flex-direction:column;gap:10px}
+.rank-card{border-radius:14px;border:1px solid rgba(240,243,189,0.25);background:rgba(240,243,189,0.04);padding:20px 22px;display:flex;gap:16px;align-items:flex-start}
+.rank-num{font-size:28px;font-weight:800;color:rgba(240,243,189,0.25);min-width:36px;line-height:1;margin-top:4px}
+.rank-body{}
+.rank-hook{font-size:16px;font-weight:600;font-style:italic;color:#fff;margin-bottom:4px;line-height:1.4}
+.rank-style{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;display:inline-block;padding:2px 10px;border-radius:999px}
+.rank-why{font-size:13px;color:#94a3b8;line-height:1.6}
+.rank-why strong{color:#f0f3bd;font-weight:500}
+
+/* COUNT BADGE */
+.count-badge{font-size:12px;color:#94a3b8;margin-bottom:16px}
+.count-badge span{color:#02c39a;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>20 Hooks para Reels de Alto Impacto</h1>
+  <p>Nicho: catálogos web para emprendedores · Máx. 10 palabras · Español neutro<br>Filtrá por estilo y descubrí los 5 seleccionados al final.</p>
+</div>
+
+<div class="filters" id="filters"></div>
+<p class="count-badge">Mostrando <span id="count">20</span> de 20 hooks</p>
+<div class="hooks-list" id="hooks-list"></div>
+
+<div class="top5-section">
+  <div class="section-label">Top 5 hooks seleccionados</div>
+  <div class="ranking-list" id="ranking"></div>
+</div>
+
+<script>
+const styles = [
+  {id:'s1', label:'Promesa hiper-específica'},
+  {id:'s2', label:'Revelación de secreto'},
+  {id:'s3', label:'Pregunta provocadora'},
+  {id:'s4', label:'Prueba social / Dato'},
+  {id:'s5', label:'Error común'},
+  {id:'s6', label:'Micro-storytelling'},
+  {id:'s7', label:'Impacto / Contraste'},
+  {id:'s8', label:'Tutorial rápido'},
+];
+
+const hooks = [
+  // S1 – Promesa hiper-específica (3)
+  {n:1, s:'s1', label:'Promesa hiper-específica', text:'Vendé más en 48 horas sin tocar código.', words:9},
+  {n:2, s:'s1', label:'Promesa hiper-específica', text:'Tu catálogo web listo antes del próximo lunes.', words:8},
+  {n:3, s:'s1', label:'Promesa hiper-específica', text:'Actualizá precios desde el celular en 30 segundos.', words:8},
+  // S2 – Revelación de secreto (3)
+  {n:4, s:'s2', label:'Revelación de secreto', text:'Nadie te dice por qué WhatsApp te hace perder ventas.', words:10},
+  {n:5, s:'s2', label:'Revelación de secreto', text:'El truco que usan negocios exitosos para vender sin programar.', words:10},
+  {n:6, s:'s2', label:'Revelación de secreto', text:'Lo que tu competencia ya sabe y vos todavía no.', words:10},
+  // S3 – Pregunta provocadora (3)
+  {n:7, s:'s3', label:'Pregunta provocadora', text:'¿Tu cliente te pregunta precios? Estás perdiendo la venta.', words:9},
+  {n:8, s:'s3', label:'Pregunta provocadora', text:'¿Seguís mandando fotos por WhatsApp como en 2018?', words:8},
+  {n:9, s:'s3', label:'Pregunta provocadora', text:'Si cerrás Instagram mañana, ¿tus clientes te encuentran igual?', words:9},
+  // S4 – Prueba social / Dato (2)
+  {n:10, s:'s4', label:'Prueba social / Dato', text:'El 90% de los emprendedores comete este error de ventas.', words:10},
+  {n:11, s:'s4', label:'Prueba social / Dato', text:'Vendí más en un fin de semana que en un mes.', words:12, words:11},
+  // S5 – Error común (2)
+  {n:12, s:'s5', label:'Error común', text:'Usar Instagram como catálogo es el error más caro.', words:9},
+  {n:13, s:'s5', label:'Error común', text:'Mandás PDFs de precios y ya perdiste la venta.', words:9},
+  // S6 – Micro-storytelling (2)
+  {n:14, s:'s6', label:'Micro-storytelling', text:'Me dijeron "caro". Mostré el catálogo. Compró sin regatear.', words:9},
+  {n:15, s:'s6', label:'Micro-storytelling', text:'Actualicé mis productos en pijama a las 11 de la noche.', words:11, words:10},
+  // S7 – Impacto / Contraste (2)
+  {n:16, s:'s7', label:'Impacto / Contraste', text:'Sin catálogo web, tu negocio es invisible para el mundo.', words:10},
+  {n:17, s:'s7', label:'Impacto / Contraste', text:'Tu competencia ya vende mientras vos contestás WhatsApp.', words:8},
+  // S8 – Tutorial rápido (3)
+  {n:18, s:'s8', label:'Tutorial rápido', text:'Cómo crear tu catálogo web en 3 pasos simples.', words:9},
+  {n:19, s:'s8', label:'Tutorial rápido', text:'Paso a paso: catálogo profesional desde Google Sheets hoy.', words:9},
+  {n:20, s:'s8', label:'Tutorial rápido', text:'Te muestro cómo actualizar tu catálogo en 60 segundos.', words:9},
+];
+
+const top5 = [
+  {
+    rank:1, hookIdx:3,
+    why:'<strong>Miedo + especificidad del canal:</strong> nombra WhatsApp — la herramienta que usa tu audiencia a diario — y activa culpa productiva inmediata.'
+  },
+  {
+    rank:2, hookIdx:6,
+    why:'<strong>Pregunta + dolor en presente:</strong> el emprendedor se reconoce en la escena al instante; la respuesta implícita "sí, pierdo la venta" lo obliga a seguir viendo.'
+  },
+  {
+    rank:3, hookIdx:13,
+    why:'<strong>Micro-drama en 9 palabras:</strong> estructura de conflicto → acción → resolución crea un loop abierto que el cerebro necesita cerrar.'
+  },
+  {
+    rank:4, hookIdx:11,
+    why:'<strong>Identidad + vergüenza suave:</strong> la palabra "2018" convierte el comportamiento en algo anticuado, activando el deseo de actualizarse sin atacar directamente.'
+  },
+  {
+    rank:5, hookIdx:15,
+    why:'<strong>Contraste aspiracional:</strong> posiciona a la competencia como ganadora en presente, generando urgencia de acción inmediata para no quedarse atrás.'
+  },
+];
+
+// Build filters
+const filtersEl = document.getElementById('filters');
+const allBtn = document.createElement('button');
+allBtn.className='fbtn active';
+allBtn.textContent='Todos (20)';
+allBtn.style.setProperty('--c','#02c39a');
+allBtn.onclick=()=>filter('all',allBtn);
+filtersEl.appendChild(allBtn);
+styles.forEach(s=>{
+  const b=document.createElement('button');
+  b.className=`fbtn`;
+  const sample=hooks.find(h=>h.s===s.id);
+  const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
+  b.style.setProperty('--c', colorMap[s.id]);
+  b.setAttribute('data-s', s.id);
+  b.textContent=s.label;
+  b.onclick=()=>filter(s.id,b);
+  filtersEl.appendChild(b);
+});
+
+// Build hook cards
+const top5Indices = new Set(top5.map(t=>t.hookIdx));
+const listEl=document.getElementById('hooks-list');
+hooks.forEach((h,i)=>{
+  const isTop=top5Indices.has(i);
+  const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
+  const card=document.createElement('div');
+  card.className=`hook-card ${h.s}${isTop?' top5':''}`;
+  card.setAttribute('data-s',h.s);
+  card.style.setProperty('--accent', colorMap[h.s]);
+
+  const psychEl = isTop ? `<div class="hook-psych">${top5.find(t=>t.hookIdx===i).why}</div>` : '';
+
+  card.innerHTML=`
+    <div class="hook-meta">
+      <span class="hook-num">${String(h.n).padStart(2,'0')}</span>
+      <span class="top5-star">★</span>
+    </div>
+    <div class="hook-body">
+      <span class="hook-style-tag tag-${h.s}">${h.label}</span>
+      <div class="hook-text">"${h.text}"</div>
+      ${psychEl}
+    </div>`;
+  listEl.appendChild(card);
+});
+
+// Build ranking
+const rankEl=document.getElementById('ranking');
+const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
+top5.forEach(t=>{
+  const h=hooks[t.hookIdx];
+  const card=document.createElement('div');
+  card.className='rank-card';
+  card.innerHTML=`
+    <div class="rank-num">#${t.rank}</div>
+    <div class="rank-body">
+      <div class="rank-hook">"${h.text}"</div>
+      <span class="rank-style tag-${h.s}" style="background:rgba(255,255,255,0.06);color:${colorMap[h.s]}">${h.label}</span>
+      <div class="rank-why">${t.why}</div>
+    </div>`;
+  rankEl.appendChild(card);
+});
+
+// Filter logic
+function filter(sid, btn){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let visible=0;
+  document.querySelectorAll('.hook-card').forEach(c=>{
+    const match = sid==='all' || c.getAttribute('data-s')===sid;
+    c.classList.toggle('hidden',!match);
+    if(match) visible++;
+  });
+  document.getElementById('count').textContent=visible;
+}
+</script>
+</body>
+</html>
