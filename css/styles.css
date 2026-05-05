@@ -1234,8 +1234,9 @@ h2 em,
 }
 
 .footer-logo {
-    width: 100px;
+    width: 48px;
     vertical-align: middle;
+    margin-left: 10px;
 }
 
 .footer-right {
