@@ -86,7 +86,7 @@
             <div class="footer-container">
                 <div class="footer-left">
                     <p class="copyright">
-                        © 2026, Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
+                        © ${new Date().getFullYear()}, Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
                         <a href="https://soymarcus.dev" target="_blank">
                             <img src="img/devBy.svg" alt="logo soymarcusdev" class="footer-logo">
                         </a>

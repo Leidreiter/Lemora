@@ -31,6 +31,14 @@
     {
       "source": "/fotoproductos",
       "destination": "/fotoproductos.html"
+    },
+    {
+      "source": "/social/hooks_reels",
+      "destination": "/social/hooks_reels.html"
+    },
+    {
+      "source": "/social/contenido_viral",
+      "destination": "/social/contenido_viral.html"
     }
   ]
 }
