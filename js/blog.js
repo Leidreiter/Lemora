@@ -71,7 +71,7 @@ function renderBlog() {
                                 </div>
                             </div>
                             <div class="id-intro-image">
-                                <img src="${post.image}" alt="${post.title}">
+                                <img src="${post.image}" alt="${post.title}" loading="lazy">
                             </div>
                         </div>
                     </div>

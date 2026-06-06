@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#05668d">
     <title>¡Pago exitoso! - Lemora</title>
     <meta name="description" content="Tu pago en Lemora fue procesado con éxito. En las próximas horas nos pondremos en contacto para dejar todo operativo. Bienvenido a Lemora.">
     <link rel="canonical" href="https://lemora.lat/pago_exitoso" />
@@ -123,7 +124,7 @@
             <div class="footer-container">
                 <div class="footer-left">
                     <p class="copyright">
-    © ${new Date().getFullYear()} Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
+    © <span id="currentYear"></span> Todos los derechos reservados. Lemora es una marca hecha con ♥️ por
                         <a href="https://soymarcus.dev" target="_blank">
                             <img loading="lazy" src="img/devBy.svg" alt="logo soymarcusdev" class="footer-logo">
                         </a>
@@ -150,6 +151,7 @@
     </div>
 
     <script src="js/confetti.js"></script>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 
 </body>
 
