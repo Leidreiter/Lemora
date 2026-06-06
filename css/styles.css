@@ -20,6 +20,14 @@
     --text-sm: 18px;
     --text-xs: 12px;
     --links: 16px;
+    --bold: 600;
+
+    /* Z-INDEX SCALE */
+    --z-dropdown: 100;
+    --z-nav: 200;
+    --z-header: 300;
+    --z-overlay: 400;
+    --z-modal: 500;
 
     /* ESPACIADO ESTANDARIZADO */
     --section-padding: 120px;
@@ -53,6 +61,12 @@ body {
 ::selection {
     background-color: var(--primary-hover);
     color: #111111;
+}
+
+/* ===== ACCESIBILIDAD ===== */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 /* ===== UTILIDADES GLOBALES ===== */
@@ -91,7 +105,14 @@ p {
     font-weight: 300;
     font-size: var(--text-base);
     line-height: 1.6;
-    color: #e5e7eb;
+    color: var(--secondary-color);
+}
+
+.bg p,
+.hero p,
+.ecosistema-overlay p,
+.success-page p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 768px) {
@@ -161,26 +182,19 @@ h2 em,
     padding: 12px 20px;
     border-radius: 999px;
     text-decoration: none;
-    font-size: var(--link);
-    font-weight: 500;
-    transition: background 0.2s ease;
-    border: 2px solid var(--blanco);
-    text-align: center;
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    border: 2px solid var(--blanco);
-    color: var(--blanco);
-}
-
-.btn-secondary {
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 999px;
+    font-size: var(--links);
+    font-weight: var(--bold);
     text-decoration: none;
-    font-size: var(--link);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    padding: var(--gap-xs) var(--gap-sm);
+    font-size: var(--links);
     text-align: center;
 }
 
@@ -216,7 +230,7 @@ h2 em,
     font-size: 18px;
     cursor: pointer;
     transition: background 0.2s ease;
-    z-index: 1000;
+    z-index: var(--z-overlay);
 }
 
 .arrow:hover {
@@ -275,8 +289,9 @@ h2 em,
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    z-index: 1000000;
+    z-index: var(--z-header);
 }
 
 .header-inner {
@@ -344,7 +359,7 @@ h2 em,
     color: white;
     font-size: 32px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: var(--z-modal);
     width: 44px;
     height: 44px;
     align-items: center;
@@ -366,7 +381,6 @@ h2 em,
 .hero {
     position: relative;
     height: 100vh;
-    background: url("hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -381,13 +395,10 @@ h2 em,
 }
 
 .hero-content {
-    width: 90%;
-    max-width: 1440px;
-    margin: 0 auto;
     position: relative;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: var(--gap-xl);
+    z-index: 2;
+    max-width: 600px;
+    gap: var(--gap-lg);
     align-items: center;
     color: #fff;
 }
@@ -653,6 +664,19 @@ h2 em,
     justify-content: center;
 }
 
+/* ===== UTILITY: Screen-reader only ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Stack */
 .store-stack {
     height: 440px;
@@ -720,7 +744,8 @@ h2 em,
     display: flex;
     flex-direction: column;
     gap: var(--gap-sm);
-    background-color: rgba(255, 166, 0, 0);
+    background-color: rgba(255, 166, 0, 0.06);
+    -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     border: 1px solid #ffffff28;
     border-radius: var(--gap-md);
@@ -1093,13 +1118,14 @@ h2 em,
         flex 0.6s ease,
         opacity 0.4s ease;
     overflow: hidden;
-    background-color: red;
+    background: rgba(255, 255, 255, 0.08);
     cursor: pointer;
 }
 
 .testimonial-card.active {
     flex: 2;
     background-color: rgba(255, 166, 0, 0);
+    -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     border: 1px solid var(--borde);
     opacity: 1;
@@ -1170,7 +1196,7 @@ h2 em,
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-    background: #ffffff;
+    background: var(--blanco);
     text-align: center;
 }
 
@@ -1210,7 +1236,7 @@ h2 em,
 
 /* ===== FOOTER ===== */
 .site-footer {
-    background-color: #000000;
+    background-color: #000;
     padding: var(--card-padding) 20px;
 }
 
@@ -1236,7 +1262,6 @@ h2 em,
 .footer-logo {
     width: 48px;
     vertical-align: middle;
-    margin-left: 10px;
 }
 
 .footer-right {
@@ -1278,7 +1303,7 @@ h2 em,
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        z-index: 100000;
+        z-index: var(--z-nav);
     }
 
     .nav.active {
@@ -1867,7 +1892,7 @@ h2 em,
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px;
+    max-height: 500px;
     padding: 0 24px 20px;
 }
 
@@ -1967,6 +1992,7 @@ h2 em,
 
 .id-why-card {
     background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 24px;
@@ -2023,7 +2049,7 @@ h2 em,
 }
 
 .id-process-subtitle {
-    color: var(--secondary-color) !important;
+    color: var(--secondary-color);
     font-size: var(--text-base);
     text-align: center;
     margin-top: -40px;
@@ -2092,6 +2118,7 @@ h2 em,
 .id-package-card {
     position: relative;
     background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 28px;
@@ -2343,6 +2370,7 @@ h2 em,
 
 .success-card {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 32px;
@@ -2651,5 +2679,27 @@ h2 em,
     .success-footer-inner {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* ===== PRINT ===== */
+@media print {
+    .header,
+    .hero,
+    .redes,
+    .confetti-dots,
+    .hero-arrows,
+    .promo-urgencia,
+    .promo-hero,
+    .promo-cta-final {
+        display: none !important;
+    }
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
     }
 }

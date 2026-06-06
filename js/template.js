@@ -31,13 +31,13 @@
             <div class="redes">
                 <div class="container-redes">
                     <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
                     <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
-                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                     </a>
                     <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -94,13 +94,13 @@
                 </div>
                 <div class="footer-right">
                     <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
                     <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
-                        <i class="fa-brands fa-tiktok"></i>
+                        <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                     </a>
                     <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>

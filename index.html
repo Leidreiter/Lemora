@@ -20,8 +20,10 @@
 
     <div id="site-header"></div>
 
+    <main>
+
     <section class="hero">
-        <div class="hero-slider" id="heroSlider">
+        <div class="hero-slider" id="heroSlider" role="region" aria-roledescription="carrusel" aria-label="Slides destacados">
             <div class="hero-slide active"></div>
             <div class="hero-slide"></div>
             <div class="hero-slide"></div>
@@ -35,7 +37,7 @@
                 <h1>
                     La verdadera solución<br>
                     <em>para vender online<br>
-                        del emprendedor</em> 🇦🇷
+                        del emprendedor</em>
                 </h1>
 
                 <p>
@@ -53,9 +55,9 @@
 
         </div>
 
-        <div class="hero-arrows">
+            <nav class="hero-arrows" aria-label="Controles del carrusel principal">
 
-            <div class="hero-media-slider" id="heroMediaSlider">
+            <div class="hero-media-slider" id="heroMediaSlider" role="region" aria-roledescription="carrusel" aria-label="Previews de tiendas">
                 <div class="hero-media-slide active">
                     <img src="/img/slide1-app.png" alt="Preview 1">
                 </div>
@@ -70,9 +72,9 @@
                 </div>
             </div>
 
-            <button class="arrow prev"><i class="fa-solid fa-arrow-left-long"></i></button>
-            <button class="arrow next"><i class="fa-solid fa-arrow-right-long"></i></button>
-        </div>
+            <button class="arrow prev" aria-label="Slide anterior"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i></button>
+            <button class="arrow next" aria-label="Slide siguiente"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
+        </nav>
     </section>
 
 
@@ -199,7 +201,7 @@
                                 te mostramos en menos de 5 minutos cómo cargar tus productos y el resto lo hacemos
                                 nosotros.
                             </p>
-                            <a href="#precios" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                            <a href="#precios" class="arrow-link">                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +225,7 @@
                                 momento,
                                 te ofrecemos llevar tu negocio al siguiente nivel, con un canal de ventas profesional.
                             </p>
-                            <a href="#precios" class="arrow-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                            <a href="#precios" class="arrow-link">                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -247,7 +249,7 @@
             <div class="caracteristicas-grid">
 
                 <!-- Galería -->
-                <div class="caracteristicas-gallery">
+                <div class="caracteristicas-gallery" role="region" aria-roledescription="carrusel" aria-label="Características de las tiendas">
                     <div class="gallery-track">
                         <img src="/img/redes.png" alt="Redes sociales integradas">
                         <img src="/img/galeria.png" alt="Galería de imágenes full screen">
@@ -308,8 +310,8 @@
                         </div>
                         <p>Destacá tu sitio con ofertas, promociones o descuentos con nuestros banners diseñados para
                             captar la
-                            atención de tus visitas y convertirlos en clientes. <b>Exclusivos para el paquete
-                                premium*</b>
+                            atención de tus visitas y convertirlos en clientes. <strong>Exclusivos para el paquete
+                                premium*</strong>
                         </p>
                     </button>
 
@@ -320,7 +322,7 @@
                         </div>
                         <p>Página de preguntas frecuentes para responder a todas las consultas sobre tu tienda:
                             pedidos, pagos, envíos, productos, devoluciones, cambios, contacto y soporte de tu tienda.
-                            <b>Exclusivos para el paquete premium*</b>
+                            <strong>Exclusivos para el paquete premium*</strong>
                         </p>
                     </button>
 
@@ -348,7 +350,7 @@
 
                     <div class="ecosistema-overlay">
                         <div class="titular">
-                            <i class="fa-regular fa-copyright ecosistema-icon"></i>
+                            <i class="fa-regular fa-copyright ecosistema-icon" aria-hidden="true"></i>
                             <span class="badge">Marcas y Logos</span>
                         </div>
                         <h3>¿Necesitás un logo para tu marca o deseás cambiar el que ya tenés?</h3>
@@ -362,7 +364,7 @@
 
                     <div class="ecosistema-overlay">
                         <div class="titular">
-                            <i class="fa-regular fa-image ecosistema-icon"></i>
+                            <i class="fa-regular fa-image ecosistema-icon" aria-hidden="true"></i>
                             <span class="badge">Diseño</span>
                         </div>
                         <h3>¿Querés un diseño para tus banners? No hay problema, lo hacemos por vos.</h3>
@@ -376,7 +378,7 @@
 
                     <div class="ecosistema-overlay">
                         <div class="titular">
-                            <i class="fa-solid fa-wand-magic-sparkles ecosistema-icon"></i>
+                            <i class="fa-solid fa-wand-magic-sparkles ecosistema-icon" aria-hidden="true"></i>
                             <span class="badge">Inteligencia artificial</span>
                         </div>
                         <h3>¿No tenés buenas fotografías para tus productos? Las hacemos con IA.</h3>
@@ -409,7 +411,7 @@
 
 
                     <ul class="features">
-                        <li><i class="fa-regular fa-circle-check"></i> Prueba si es para tí</li>
+                        <li><i class="fa-regular fa-circle-check" aria-hidden="true"></i> Prueba si es para tí</li>
                     </ul>
 
                     <a href="https://wa.me/543515957014?text=Hola,%20me%20interesa%20iniciar%20una%20prueba%20gratuita%20para%20mi%20negocio..."
@@ -474,7 +476,7 @@
             </div>
 
             <a href="https://youtu.be/yknCEuK2mfU" class="btn-primary" rel="noopener noreferrer" target="_blank">
-                <i class="fa-solid fa-circle-play"></i> Ver video diferencia entre planes
+                    <i class="fa-solid fa-circle-play" aria-hidden="true"></i> Ver video diferencia entre planes
             </a>
 
 
@@ -493,15 +495,15 @@
                 </div>
 
                 <div class="testimonios-nav">
-                    <button class="arrow prev" data-testimonial-prev><i
-                            class="fa-solid fa-arrow-left-long"></i></button>
-                    <button class="arrow next" data-testimonial-next><i
-                            class="fa-solid fa-arrow-right-long"></i></button>
+                    <button class="arrow prev" data-testimonial-prev aria-label="Testimonio anterior"><i
+                            class="fa-solid fa-arrow-left-long" aria-hidden="true"></i></button>
+                    <button class="arrow next" data-testimonial-next aria-label="Testimonio siguiente"><i
+                            class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
                 </div>
             </div>
 
             <!-- Carousel -->
-            <div class="testimonios-carousel">
+            <div class="testimonios-carousel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
                 <div class="testimonios-track" data-testimonial-track>
 
                     <!-- Vista 1 -->
@@ -512,7 +514,7 @@
                                 <img src="img/testimonio1.jpg" alt="Carolina Villegas">
                             </div>
                             <div class="testimonial-content">
-                                <i class="fa-solid fa-quote-left"></i>
+                                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                                 <p>
                                     En 24 h, desde que me puse en contacto ¡ya tenía mi web en línea!
                                     les pasé toda la información y al otro día ya estaba operativa.
@@ -525,13 +527,13 @@
                             </div>
                         </article>
 
-                        <article class="testimonial-card inactive">
-                            <div class="testimonial-media">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600"
-                                    alt="">
-                            </div>
+                            <article class="testimonial-card inactive">
+                                <div class="testimonial-media">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600"
+                                        alt="Testimonio de Helena Ponce">
+                                </div>
                             <div class="testimonial-content">
-                                <i class="fa-solid fa-quote-left"></i>
+                                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                                 <p>
                                     Lemora nos permitió lanzar nuestra tienda rápidamente
                                     y empezar a vender sin complicaciones.
@@ -549,13 +551,13 @@
                     <!-- Vista 2 -->
                     <div class="testimonial-view">
 
-                        <article class="testimonial-card active">
-                            <div class="testimonial-media">
-                                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600"
-                                    alt="">
-                            </div>
+                            <article class="testimonial-card active">
+                                <div class="testimonial-media">
+                                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600"
+                                        alt="Testimonio de Ana Torres">
+                                </div>
                             <div class="testimonial-content">
-                                <i class="fa-solid fa-quote-left"></i>
+                                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                                 <p>
                                     Tener todo resuelto en un solo lugar nos dio tranquilidad
                                     para enfocarnos en crecer.
@@ -568,13 +570,13 @@
                             </div>
                         </article>
 
-                        <article class="testimonial-card inactive">
-                            <div class="testimonial-media">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600"
-                                    alt="">
-                            </div>
+                            <article class="testimonial-card inactive">
+                                <div class="testimonial-media">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600"
+                                        alt="Testimonio de Lucas Gómez">
+                                </div>
                             <div class="testimonial-content">
-                                <i class="fa-solid fa-quote-left"></i>
+                                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
                                 <p>
                                     Una solución clara, simple y muy efectiva.
                                 </p>
@@ -614,6 +616,8 @@
             </a>
         </div>
     </section>
+
+    </main>
 
     <div id="site-footer"></div>
     <script src="js/template.js"></script>
