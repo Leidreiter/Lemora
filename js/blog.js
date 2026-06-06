@@ -41,6 +41,8 @@ const posts = [
 
 function renderBlog() {
     const container = document.getElementById('blog-container');
+    if (!container) return;
+
     const params = new URLSearchParams(window.location.search);
     const postSlug = params.get('post');
 
@@ -77,7 +79,6 @@ function renderBlog() {
         }
     }
 
-    // Default: Listado de posts
     container.innerHTML = `
         <section class="page-hero">
             <h1>Blog de <em>Lemora</em></h1>
@@ -85,9 +86,9 @@ function renderBlog() {
         </section>
         <section class="id-process-section" style="background: #fff;">
             <div class="container">
-                <div class="id-process-grid">
+                <div class="id-process-grid" data-blog-grid>
                     ${posts.map(post => `
-                        <article class="id-process-step" onclick="window.location.href='?post=${post.slug}'" style="cursor:pointer">
+                        <article class="id-process-step" data-post-slug="${post.slug}" style="cursor:pointer">
                             <span class="id-step-number">${post.date.split(' ')[0]}</span>
                             <h3>${post.title}</h3>
                             <p>${post.excerpt}</p>
@@ -98,6 +99,16 @@ function renderBlog() {
             </div>
         </section>
     `;
+
+    const grid = container.querySelector('[data-blog-grid]');
+    if (grid) {
+        grid.addEventListener('click', (e) => {
+            const article = e.target.closest('[data-post-slug]');
+            if (article) {
+                window.location.href = `?post=${article.dataset.postSlug}`;
+            }
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', renderBlog);
