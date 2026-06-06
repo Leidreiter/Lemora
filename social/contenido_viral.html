@@ -84,7 +84,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#0b1a2b;color:#ff
   <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">En Vivo</div></div>
 </div>
 
-<p class="counter">Mostrando <span id="counter">40</span> de 40 ideas</p>
+<p class="counter">Mostrando <span id="counter" aria-live="polite">40</span> de 40 ideas</p>
 <div class="ideas-grid" id="grid"></div>
 
 <script>
@@ -166,13 +166,6 @@ filtersEl.addEventListener('click', (e) => {
   btn.classList.add('active');
   render(btn.dataset.filter === 'todos' ? ideas : ideas.filter(i => i.formato === btn.dataset.filter));
 });
-
-// Legacy filter function kept for reference (no longer used inline)
-function filter(fmt, btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  render(fmt==='todos' ? ideas : ideas.filter(i=>i.formato===fmt));
-}
 
 render(ideas);
 </script>

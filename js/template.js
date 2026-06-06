@@ -48,10 +48,10 @@
                 </a>
 
                 <nav class="nav" id="nav">
-                    <button class="close-menu" id="close-menu">
+                    <button class="close-menu" id="close-menu" aria-label="Cerrar menú">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
-                    <ul class="nav-list">
+                    <ul class="nav-list" id="nav-list">
                         <li><a href="index.html#problemas">Problemas</a></li>
                         <li><a href="index.html#solucion">Solución</a></li>
                         <li><a href="index.html#ecosistema">¿Qué ofrecemos?</a></li>
@@ -66,7 +66,7 @@
                     <a href="${ctaLink}" target="_blank" class="btn-primary" rel="noopener noreferrer">
                         ${ctaText}
                     </a>
-                    <button class="hamburger" id="hamburger">
+                    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -110,5 +110,19 @@
     // ===== INIT =====
     renderHeader();
     renderFooter();
+    setAriaCurrent();
+
+    function setAriaCurrent() {
+        const list = document.getElementById('nav-list');
+        if (!list) return;
+        const path = window.location.pathname.split('/').pop() || 'index.html';
+        list.querySelectorAll('a').forEach(a => {
+            a.removeAttribute('aria-current');
+            const href = a.getAttribute('href');
+            if (href === path || (path === 'index.html' && href && href.startsWith('index.html'))) {
+                a.setAttribute('aria-current', 'page');
+            }
+        });
+    }
 
 })();

@@ -108,12 +108,15 @@ function renderBlog() {
         grid.addEventListener('click', (e) => {
             const article = e.target.closest('[data-post-slug]');
             if (article) {
-                window.location.href = `?post=${article.dataset.postSlug}`;
+                const slug = article.dataset.postSlug;
+                history.pushState({ post: slug }, '', `?post=${slug}`);
+                renderBlog();
             }
         });
     }
 }
 
+window.addEventListener('popstate', renderBlog);
 document.addEventListener('DOMContentLoaded', renderBlog);
 
 })();

@@ -174,7 +174,6 @@ filtersEl.appendChild(allBtn);
 styles.forEach(s=>{
   const b=document.createElement('button');
   b.className=`fbtn`;
-  const sample=hooks.find(h=>h.s===s.id);
   b.style.setProperty('--c', colorMap[s.id]);
   b.setAttribute('data-s', s.id);
   b.textContent=s.label;
