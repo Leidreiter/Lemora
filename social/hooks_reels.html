@@ -115,13 +115,13 @@ const hooks = [
   {n:9, s:'s3', label:'Pregunta provocadora', text:'Si cerrás Instagram mañana, ¿tus clientes te encuentran igual?', words:9},
   // S4 – Prueba social / Dato (2)
   {n:10, s:'s4', label:'Prueba social / Dato', text:'El 90% de los emprendedores comete este error de ventas.', words:10},
-  {n:11, s:'s4', label:'Prueba social / Dato', text:'Vendí más en un fin de semana que en un mes.', words:12, words:11},
+  {n:11, s:'s4', label:'Prueba social / Dato', text:'Vendí más en un fin de semana que en un mes.', words:11},
   // S5 – Error común (2)
   {n:12, s:'s5', label:'Error común', text:'Usar Instagram como catálogo es el error más caro.', words:9},
   {n:13, s:'s5', label:'Error común', text:'Mandás PDFs de precios y ya perdiste la venta.', words:9},
   // S6 – Micro-storytelling (2)
   {n:14, s:'s6', label:'Micro-storytelling', text:'Me dijeron "caro". Mostré el catálogo. Compró sin regatear.', words:9},
-  {n:15, s:'s6', label:'Micro-storytelling', text:'Actualicé mis productos en pijama a las 11 de la noche.', words:11, words:10},
+  {n:15, s:'s6', label:'Micro-storytelling', text:'Actualicé mis productos en pijama a las 11 de la noche.', words:10},
   // S7 – Impacto / Contraste (2)
   {n:16, s:'s7', label:'Impacto / Contraste', text:'Sin catálogo web, tu negocio es invisible para el mundo.', words:10},
   {n:17, s:'s7', label:'Impacto / Contraste', text:'Tu competencia ya vende mientras vos contestás WhatsApp.', words:8},
@@ -154,9 +154,11 @@ const top5 = [
   },
 ];
 
+const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
+
 // Build filters
-const filtersEl = document.getElementById('filters');
-const allBtn = document.createElement('button');
+const filtersEl=document.getElementById('filters');
+const allBtn=document.createElement('button');
 allBtn.className='fbtn active';
 allBtn.textContent='Todos (20)';
 allBtn.style.setProperty('--c','#02c39a');
@@ -166,7 +168,6 @@ styles.forEach(s=>{
   const b=document.createElement('button');
   b.className=`fbtn`;
   const sample=hooks.find(h=>h.s===s.id);
-  const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
   b.style.setProperty('--c', colorMap[s.id]);
   b.setAttribute('data-s', s.id);
   b.textContent=s.label;
@@ -179,7 +180,6 @@ const top5Indices = new Set(top5.map(t=>t.hookIdx));
 const listEl=document.getElementById('hooks-list');
 hooks.forEach((h,i)=>{
   const isTop=top5Indices.has(i);
-  const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
   const card=document.createElement('div');
   card.className=`hook-card ${h.s}${isTop?' top5':''}`;
   card.setAttribute('data-s',h.s);
@@ -202,7 +202,6 @@ hooks.forEach((h,i)=>{
 
 // Build ranking
 const rankEl=document.getElementById('ranking');
-const colorMap={s1:'#02c39a',s2:'#a78bfa',s3:'#fbbf24',s4:'#60a5fa',s5:'#f87171',s6:'#fb923c',s7:'#e879f9',s8:'#34d399'};
 top5.forEach(t=>{
   const h=hooks[t.hookIdx];
   const card=document.createElement('div');

@@ -5,6 +5,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/promo",
+      "destination": "/promo.html"
+    },
+    {
       "source": "/membresias",
       "destination": "/membresias.html"
     },

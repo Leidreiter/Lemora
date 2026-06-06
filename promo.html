@@ -522,35 +522,10 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script src="js/template.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
-        // ===== Hamburger menu (simplified for promo page) =====
-        const hamburger = document.getElementById("hamburger");
-        const nav = document.getElementById("nav");
-
-        if (hamburger && nav) {
-            hamburger.addEventListener("click", (e) => {
-                e.stopPropagation();
-                nav.classList.toggle("active");
-            });
-
-            document.addEventListener("click", (e) => {
-                if (nav.classList.contains("active") &&
-                    !nav.contains(e.target) &&
-                    !hamburger.contains(e.target)) {
-                    nav.classList.remove("active");
-                }
-            });
-
-            const closeBtn = document.getElementById("close-menu");
-            if (closeBtn) {
-                closeBtn.addEventListener("click", () => {
-                    nav.classList.remove("active");
-                });
-            }
-        }
-
-        // ===== Scroll fade-in animations =====
+        // ===== Scroll fade-in animations (promo-specific) =====
         const fadeElements = document.querySelectorAll('.promo-fade-in');
 
         const fadeObserver = new IntersectionObserver((entries) => {

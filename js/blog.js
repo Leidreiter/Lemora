@@ -3,7 +3,10 @@
  * Maneja la visualización dinámica de las entradas del blog de Lemora.
  */
 
-const posts = [
+(function () {
+    "use strict";
+
+    const posts = [
     {
         slug: 'que-es-un-dominio',
         title: '¿Qué es un dominio y por qué no está incluido en mi plan?',
@@ -112,3 +115,5 @@ function renderBlog() {
 }
 
 document.addEventListener('DOMContentLoaded', renderBlog);
+
+})();

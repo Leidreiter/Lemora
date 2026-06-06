@@ -184,7 +184,6 @@ h2 em,
     text-decoration: none;
     font-size: var(--links);
     font-weight: var(--bold);
-    text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s ease;
 }
@@ -196,6 +195,21 @@ h2 em,
     padding: var(--gap-xs) var(--gap-sm);
     font-size: var(--links);
     text-align: center;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    padding: var(--gap-xs) var(--gap-sm);
+    font-size: var(--links);
+    text-align: center;
+    border: 2px solid var(--blanco);
+    background: transparent;
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -245,9 +259,14 @@ h2 em,
             #028090 45%,
             #05668d 100%);
     color: #fff;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media (min-width: 769px) {
+    .bg {
+        background-attachment: fixed;
+    }
 }
 
 .bg .btn-primary {
@@ -1518,7 +1537,6 @@ h2 em,
 
 .page-hero {
     background: radial-gradient(circle at center, #02c39a 0%, #028090 45%, #05668d 100%);
-    background-attachment: fixed;
     padding: 160px 0 80px;
     text-align: center;
     color: #fff;
@@ -1783,7 +1801,6 @@ h2 em,
 /* ===== GUARANTEE STRIP ===== */
 .guarantee-strip {
     background: radial-gradient(circle at center, #02c39a 0%, #028090 45%, #05668d 100%);
-    background-attachment: fixed;
     padding: 64px 0;
     color: #fff;
     text-align: center;
