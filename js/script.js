@@ -221,6 +221,22 @@
         });
     })();
 
+    /* ===== FADE-IN ON SCROLL ===== */
+    const fadeCards = document.querySelectorAll('.ecosistema-card, .planes-card');
+    if ('IntersectionObserver' in window && fadeCards.length) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        fadeCards.forEach((card) => fadeObserver.observe(card));
+    } else {
+        fadeCards.forEach((card) => card.classList.add('visible'));
+    }
+
     /* ===== CLEANUP ===== */
     window.addEventListener('beforeunload', function () {
         if (heroInterval) clearInterval(heroInterval);
