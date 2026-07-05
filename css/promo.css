@@ -717,7 +717,7 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .promo-section-header h2 {
         font-size: 36px;
     }

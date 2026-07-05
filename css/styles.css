@@ -441,10 +441,11 @@ h2 em,
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-top: 40px;
 }
 
 .hero-text h1 {
-    font-size: 50px;
+    font-size: var(--title-xl);
     line-height: 1;
     font-weight: 400;
     letter-spacing: 2px;
@@ -1314,11 +1315,11 @@ h2 em,
 
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     :root {
-        --title-xl: 40px;
-        --title-lg: 34px;
-        --title-md: 26px;
+        --title-xl: 36px;
+        --title-lg: 24px;
+        --title-md: 20px;
     }
 }
 
@@ -1401,13 +1402,18 @@ h2 em,
     }
 
     .hero {
-        height: 100vh;
+        height: auto;
+        min-height: auto;
     }
 
     .hero-content {
         max-width: 92%;
         margin: 0 auto; 
         grid-template-columns: 1fr;
+        padding-top: 0;
+    }
+
+    .hero-text {
         padding-top: 0;
     }
 
@@ -2346,7 +2352,7 @@ h2 em,
 }
 
 /* RESPONSIVE - IDENTIDAD CORPORATIVA */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .id-why-grid {
         grid-template-columns: repeat(2, 1fr);
     }
