@@ -1730,6 +1730,10 @@ h2 em,
     color: inherit;
 }
 
+.gold li{
+    color: goldenrod;
+}
+
 .plan-card:not(.featured):not(.luxury) .plan-features li {
     color: var(--text-color);
 }
@@ -1747,6 +1751,9 @@ h2 em,
 }
 
 .luxury .plan-features li i {
+    color: #e8cc7a;
+}
+.luxury .plan-features li.gold{
     color: #e8cc7a;
 }
 
