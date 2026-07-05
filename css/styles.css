@@ -1355,11 +1355,11 @@ h2 em,
     .nav-list {
         flex-direction: column;
         padding: var(--card-padding);
-        gap: 50px;
+        gap: 30px;
     }
 
     .nav-list li a {
-        font-size: 32px;
+        font-size: 22px;
         color: #fff;
     }
 
@@ -1404,6 +1404,7 @@ h2 em,
     .hero {
         height: auto;
         min-height: auto;
+        padding-top: 72px;
     }
 
     .hero-content {
@@ -1470,7 +1471,7 @@ h2 em,
     }
 
     .ecosistema-card {
-        height: 500px;
+        height: 400px;
     }
 
     .ecosistema-overlay {
