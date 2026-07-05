@@ -1314,6 +1314,14 @@ h2 em,
 
 /* ===== RESPONSIVE ===== */
 
+@media (max-width: 1024px) {
+    :root {
+        --title-xl: 40px;
+        --title-lg: 34px;
+        --title-md: 26px;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --title-xl: 36px;

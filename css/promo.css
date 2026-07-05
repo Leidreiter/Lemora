@@ -717,6 +717,28 @@
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .promo-section-header h2 {
+        font-size: 36px;
+    }
+
+    .promo-hero h1 {
+        font-size: 42px;
+    }
+
+    .promo-oferta-title {
+        font-size: 36px;
+    }
+
+    .promo-cta-final h2 {
+        font-size: 36px;
+    }
+
+    .promo-filtro-content h2 {
+        font-size: 36px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .promo-section {
