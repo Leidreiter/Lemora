@@ -510,9 +510,9 @@ h2 em,
 /* ===== HERO MEDIA SLIDER ===== */
 .hero-media-slider {
     position: absolute;
-    bottom: 350px;
+    bottom: 300px;
     right: 200px;
-    width: 320px;
+    width: 260px;
     z-index: 4;
 }
 
@@ -1393,7 +1393,7 @@ h2 em,
     }
 
     .hero {
-        height: 600px;
+        height: 100vh;
     }
 
     .hero-content {
