@@ -33,7 +33,7 @@
                     <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+                    <a href="https://tiktok.com/@soymarcus.dev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
                         <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                     </a>
                     <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
@@ -96,7 +96,7 @@
                     <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://tiktok.com/@soymarcusdev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+                    <a href="https://tiktok.com/@soymarcus.dev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
                         <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                     </a>
                     <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
