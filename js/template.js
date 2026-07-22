@@ -30,14 +30,11 @@
         <header class="header">
             <div class="redes">
                 <div class="container-redes">
-                    <a href="https://instagram.com/soymarcusdev" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                    <a href="https://instagram.com/lemora.lat" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://tiktok.com/@soymarcus.dev" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+                    <a href="https://tiktok.com/@lemora.lat" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
                         <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://youtube.com/@soymarcusdev" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
