@@ -64,15 +64,11 @@
 
 .planes-card:nth-child(2),
 .ecosistema-card:nth-child(2) {
-    animation-delay: 0.1s;
+    animation-delay: 0.15s;
 }
 
 .planes-card:nth-child(3),
 .ecosistema-card:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-.planes-card:nth-child(4) {
     animation-delay: 0.3s;
 }
 
@@ -1063,6 +1059,11 @@ h2 em,
     row-gap: 30px;
 }
 
+/* Primer card (Prueba gratis) ocupa 2 columnas */
+.planes-card:first-child {
+    grid-column: span 2;
+}
+
 /* CARD */
 .planes-card {
     position: relative;
@@ -1145,6 +1146,16 @@ h2 em,
 .planes-card:hover .planes-cta {
     background: #fff;
     color: #000;
+}
+
+.planes-card h3 span {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.planes-card:first-child .planes-cta {
+    align-self: flex-start;
 }
 
 /* ===== testimonios SECTION ===== */
@@ -1520,6 +1531,10 @@ h2 em,
     .ecosistema-grid,
     .planes-grid {
         grid-template-columns: 1fr;
+    }
+
+    .planes-card:first-child {
+        grid-column: span 1;
     }
 
     .store-stack {
